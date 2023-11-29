@@ -1,0 +1,342 @@
+:root {
+    --main-color: #0a0a0a;
+    --header-font-color: rgb(234, 0, 64);
+}
+
+body {
+    margin: 0;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.text-align-left {
+    text-align: left;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.border-radius-999 {
+    border-radius: 9999rem;
+}
+
+.hero_image_background {
+    text-align: center;
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.input_border_none {
+    border: none;
+}
+
+#header,
+#footer {
+    background-color: black;
+    color: white;
+}
+
+.logo {
+    width: 12em;
+}
+
+.block {
+    width: 100%;
+    padding: 5em 0;
+    text-align: center;
+}
+
+#navbar {
+    float: right;
+    list-style: none;
+}
+
+#hero-image {
+    width: 100%;
+    max-width: 575px;
+}
+
+.hero-image-block {
+    height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#cta5 {
+    background-image: url('media/hero2.jpg');
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#subscribe {
+    background-image: url('media/hero3.png');
+    height: 20rem;
+}
+
+#index button {
+    color: #F0F0F4;
+    background-color: black;
+    border-radius: 9999rem !important;
+    border-style: none;
+    padding: 0.7em;
+    outline: none;
+    font-weight: bold;
+}
+
+.button-big {
+    display: block;
+    width: 100%;
+}
+
+
+
+#index input {
+    border-width: 1px;
+    border-color: #F0F0F4;
+    border-style: solid;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: rgb(41, 40, 40);
+    background-color: #FAFAFC;
+    outline: none;
+}
+
+input:hover {
+    border-color: rgb(180, 180, 180);
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(180, 180, 180);
+    opacity: 1;
+    /* Firefox */
+}
+
+#email-input {
+    border-color: #272727;
+}
+
+/* about page-------------------------------------- */
+#about_page .company_name_container {
+
+    background-image: url('../images/hero4.webp');
+    text-align: center;
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#about_page .company_name_container .container {
+    padding: 50px;
+}
+
+#about_page .box_color {
+    text-align: center;
+    color: #FAFAFC;
+}
+
+#about_page .trusted_brands_container {
+    text-align: center;
+}
+
+#about_page .trusted_brands_container_text {
+    padding-top: 30px;
+}
+
+
+#about_page .trusted_brands_container_text h2 {
+    font-size: 2.2rem;
+}
+
+#about_page .trusted_brands_container_text p {
+    font-size: 1.2rem;
+}
+
+#about_page .about_page_images_size {
+    padding: 80px;
+}
+
+#about_page .about_page_images_size img {
+    width: 100px;
+    height: 150px;
+    object-fit: scale-down;
+}
+
+#about_page .get_speaking_events_now_container {
+    text-align: center;
+}
+
+#about_page .about_page_email_input {
+    text-align: center;
+}
+
+
+#about_page .get_speaking_events_now_container {
+    background-image: url('https://softr-prod.imgix.net/applications/c939f551-4da1-4acb-9137-ed96e4aeafdf/assets/784147ca-5a4d-4310-9b35-b9cf0791bce9.jpeg');
+}
+
+#about_page .get_speaking_events_now_container .text_box {
+    padding: 3%;
+}
+
+#number_box .number_box {
+    padding: 20px;
+}
+
+/* speakers page-------------------------------------- */
+#speakers_page .your_speaking_events_container_img {
+    background-image: url('https://softr-prod.imgix.net/applications/c939f551-4da1-4acb-9137-ed96e4aeafdf/assets/4b34a8da-584c-4cc4-a04e-88e5ab7eb09b.png');
+
+}
+
+#speakers_page .your_speaking_events_container_search {
+    padding: 5% 5% 0 5%;
+    height: 50vh;
+}
+
+.get_verified {
+    background-image: url('https://softr-prod.imgix.net/applications/c939f551-4da1-4acb-9137-ed96e4aeafdf/assets/6e434206-3e19-4f28-8d18-d60249f89915.png');
+    height: 70vh;
+}
+
+.get_verified_content {
+    padding-top: 8%;
+}
+
+.get_verified_box_text h1 {
+    font-size: 3.5rem;
+}
+
+.get_verified_box_text p {
+    font-size: 1.3rem;
+}
+
+.get_verified_box_input_detail {
+    padding: 10px;
+}
+
+/* get_in_touch page */
+#get_in_touch .contact_us {
+    background-image: url('https://softr-prod.imgix.net/applications/c939f551-4da1-4acb-9137-ed96e4aeafdf/assets/89e6fcc0-34b6-4476-bec8-58844d11e781.jpeg');
+    height: 70vh;
+
+}
+
+#get_in_touch .contact_us_text {
+    padding: 25% 25% 25% 30%;
+    color: #FAFAFC;
+}
+
+#get_in_touch .say_hello {
+    background-image: url('https://softr-prod.imgix.net/applications/c939f551-4da1-4acb-9137-ed96e4aeafdf/assets/88036fc7-286b-45e6-b54a-e2069203e6f9.png');
+    height: 120vh;
+    background-size: contain;
+
+}
+
+#get_in_touch .say_hello_content {
+    padding-top: 20%;
+}
+
+#get_in_touch .say_hello_input_textarea {
+    border-radius: 15%;
+}
+
+#get_in_touch .say_hello_input_row_col {
+    padding: 8px;
+}
+
+/* launch_your_speaking_event page */
+#launch_your_speaking_event .launch_your_speaking_event_img_section {
+    background-image: url('https://softr-prod.imgix.net/applications/c939f551-4da1-4acb-9137-ed96e4aeafdf/assets/c97cadce-b45f-469e-b2a1-3ac66ad34a6c.jpeg')
+}
+
+#launch_your_speaking_event .text_box {
+    padding-top: 10%;
+}
+
+#launch_your_speaking_event .text_box h2 {
+    color: rgb(249, 249, 249);
+}
+
+#launch_your_speaking_event .begin_container {
+    padding-top: 10%
+}
+
+#launch_your_speaking_event .archived_speaking_events {
+    height: 40vh;
+}
+
+.archived_speaking_events_container {
+    padding-top: 8%;
+}
+
+.begin_form_container .form-container {
+    text-align: center;
+}
+
+.begin_form_container form {
+    width: 100%;
+    max-width: 517px;
+    margin: auto;
+}
+
+.begin_form_container h4,
+h6 {
+    padding-bottom: 1em;
+}
+
+.begin_form_container input,
+textarea,
+select {
+    border-width: 1px;
+    border-color: #f0f0f4;
+    border-style: solid;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: rgb(41, 40, 40);
+    background-color: #fafafc;
+    margin: 0.5rem 0;
+    outline: none;
+    width: 100%;
+}
+
+.begin_form_container select {
+    padding: 1.3rem 0.75rem;
+}
+
+.begin_form_container input:hover {
+    border-color: rgb(180, 180, 180);
+}
+
+.begin_form_container ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(180, 180, 180);
+    opacity: 1;
+    /* Firefox */
+}
+
+.begin_form_container button {
+    color: #f0f0f4;
+    background-color: black;
+    border-radius: 9999rem !important;
+    border-style: none;
+    display: block;
+    margin: 1em 0 !important;
+    padding: 0.7em;
+    width: 100%;
+    outline: none;
+}
+
+.begin_form_container {
+    padding: 10%;
+}

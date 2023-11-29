@@ -1,0 +1,92 @@
+{% extends 'main.html' %} {%block content %}{% load static %}
+<title>{{title}}</title>
+
+<section id="about_page">
+  <div class="company_name_container">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="box box_color">
+            <h1>Oliver McCourty</h1>
+            <p>helping speakers share their stories</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trusted_brands_container">
+    <div class="container">
+      <div class="row">
+        <div class="trusted_brands_container_text">
+          <h2>trusted brands</h2>
+          <p>because partnerships engage leaderships</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="owl_img_container">
+          <div class="owl-carousel owl-theme">
+            {% for x in about_page_img %}
+            <div class="item">
+              <div class="about_page_images_size">
+                <img src="{% static x %}" />
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="number_box">
+            <h1>12 000 000+</h1>
+            <p>views per week</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="number_box">
+            <h1>£3 000 000 000</h1>
+            <p>average revenue of board Jack sits on</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="number_box">
+            <h1>1 000 000+</h1>
+            <p>young people influenced</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br />
+  <div class="get_speaking_events_now_container hero_image_background">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="text_box">
+            <h1>get speaking events now</h1>
+            <p>stay in the loop</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-md-center">
+        <div class="col-md-3 text-align-right">
+          <input type="email" name="email" id="" placeholder="your email" />
+        </div>
+        <div class="col-md-3 text-align-left">
+          <button class="btn btn-dark" type="submit">subscribe</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

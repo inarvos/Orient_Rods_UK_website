@@ -1,0 +1,184 @@
+{% extends 'main.html' %} {%block content %}{% load static %}
+<title>{{title}}</title>
+
+<section id="launch_your_speaking_event">
+  <!-- 1st section-->
+  <div
+    class="launch_your_speaking_event_img_section text-align-center hero_image_background"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="text_box">
+            <h2>launch your speaking event</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--2nd secion-->
+  <div class="begin_form_container">
+    <div class="form-container">
+      <h4>begin</h4>
+      <h6>only takes 60 secs</h6>
+      <form class="form">
+        <input type="file" id="image" accept="image/*" />
+        <input
+          type="text"
+          id="event-name"
+          maxlength="50"
+          placeholder="speaking event name"
+        />
+        <input type="date" id="date" placeholder="date" />
+
+        <select id="type" name="type" placeholder="type">
+          <option value="" disabled selected>type</option>
+          <option value="Panel">Panel</option>
+          <option value="1 to 1 Interview">1 to 1 Interview</option>
+          <option value="Public Speech">Public Speech</option>
+        </select>
+
+        <input
+          type="text"
+          id="location"
+          maxlength="50"
+          placeholder="location"
+        />
+
+        <select
+          id="guest-capacity"
+          name="capacity"
+          placeholder="guest capacity"
+        >
+          <option value="" disabled selected>capacity</option>
+          <option value="0 to 19">0 to 19</option>
+          <option value="20 to 49">20 to 49</option>
+          <option value="150 to 299">150 to 299</option>
+          <option value="300 to 999">300 to 999</option>
+          <option value="1 000+">1000+</option>
+        </select>
+
+        <select id="topics" name="topics" placeholder="topic(s)">
+          <option value="" disabled selected>topic(s)</option>
+          <option
+            value="Under-representation of women in history of technology"
+          >
+            Under-representation of women in history of technology
+          </option>
+          <option value="Women in the meat industry">
+            Women in the meat industry
+          </option>
+          <option value="Young entrepreneurs">Young entrepreneurs</option>
+        </select>
+
+        <input
+          type="number"
+          id="worth"
+          min="0"
+          max="100000"
+          step="10"
+          placeholder="worth"
+        />
+        <textarea
+          name="description"
+          rows="4"
+          cols="30"
+          placeholder="description (tip: strategic aims of speaking events in bullet points better engage speakers over lots of text)"
+        ></textarea>
+        <button id="submit"><b>submit</b></button>
+      </form>
+    </div>
+
+    <script>
+      $("#submit").click(submitEventDetails());
+
+      function submitEventDetails() {
+        let headers_ = {
+          Authorization: "Bearer keyRADS13aR4NxTk5",
+          "Content-Type": "application/json",
+        };
+
+        axios
+          .post(
+            "app3EO5jbNIVykiT0",
+            {
+              fields: {
+                "Speaking Event Name": $("#event-name").val(),
+                Image: [
+                  {
+                    url: $("input[type=file]").val(),
+                  },
+                ],
+                Date: $("#date").val(),
+                Location: $("#location").val(),
+                "Guest Capacity": $("#capacity").val(),
+                Topic: [$("#topic").val()],
+                Worth: $("#worth").val(),
+                "Created by": ["recZlSE7prJ87mtjQ"],
+                Status: "published",
+                Type: $("#type").val(),
+              },
+            },
+            { headers: headers_ }
+          )
+          .then((resp) => {
+            console.log("success");
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
+    </script>
+  </div>
+  <!--3rd secion-->
+  <h1 class="text-align-center">Card in here</h1>
+  <!--card-->
+
+  <!--4th secion archived_speaking_events -->
+  <div class="archived_speaking_events">
+    <div class="archived_speaking_events_container container text-align-center">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Your archived speaking events</h1>
+        </div>
+        <div class="col-md-12">
+          <button class="btn btn-lg btn-dark border-radius-999" type="">
+            see archived events
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="get_verified text-align-center hero_image_background">
+    <div class="get_verified_content">
+      <div class="get_verified_box_text">
+        <h1>get verified</h1>
+        <p>use the space below to express interest in becoming verified</p>
+      </div>
+
+      <div class="get_verified_box_input">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 get_verified_box_input_detail">
+              <input
+                class="border-radius-999"
+                type="email"
+                name="verified_email"
+                placeholder="your email"
+                size="50"
+              />
+            </div>
+            <div class="col-12 get_verified_box_input_detail">
+              <button class="btn btn-dark border-radius-999" type="submit">
+                submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

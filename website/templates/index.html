@@ -1,0 +1,41 @@
+{% extends 'main.html' %} {%block content %}{% load static %}
+<title>{{title}}</title>
+
+<section id="index">
+  <div class="main-container">
+    <div class="block" id="hero1">
+      <div style="display: inline-block">
+        <h1 class="display-2">precise & simple</h1>
+        <h5>helping speakers share their stories</h5>
+        <button>for speakers</button>
+        <button>for organisers</button>
+      </div>
+      <img
+        src="{% static 'images/hero1.jfif' %}"
+        alt="virtual and physical events"
+        id="hero-image"
+      />
+    </div>
+    <div class="block" id="hero2">
+      <h2 class="display-1">built for <b>both</b></h2>
+      <h6>speakers finding speaking events</h6>
+      <h6>organisers finding speakers</h6>
+      <h2>simple.</h2>
+      <h2>apply to speak at a speaking event below</h2>
+    </div>
+    <div class="block" id="listed-events"></div>
+    <div class="block hero-image-block" id="cta5">
+      <h2>coming soon...</h2>
+      <h2>featured speaking events</h2>
+      <h4>London, Glasgow, Manchester + more</h4>
+    </div>
+    <div class="block hero-image-block" id="subscribe">
+      <h2 class="display-5">get speaking events now</h2>
+      <h6>stay in the loop</h6>
+      <input type="text" id="email-input" placeholder="email" />
+      <button>subscribe</button>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

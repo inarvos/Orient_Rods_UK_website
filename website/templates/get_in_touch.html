@@ -1,0 +1,74 @@
+{% extends 'main.html' %} {%block content %}{% load static %}
+<title>{{title}}</title>
+
+<section id="get_in_touch">
+  <div class="contact_us hero-image-block">
+    <div class="contact_us_text text-align-center">
+      <h1>Contact us</h1>
+    </div>
+  </div>
+
+  <div class="say_hello hero-image-block">
+    <div class="say_hello_content">
+      <div class="say_hello_text text-align-center container">
+        <div class="row">
+          <div class="col-12"><h1>say hello</h1></div>
+          <div class="col-12"><p>our team will be in touch</p></div>
+        </div>
+      </div>
+
+      <div class="say_hello_input container text-align-center">
+        <div class="row">
+          <div class="col-md-12 say_hello_input_row_col">
+            <input
+              class="border-radius-999 input_border_none"
+              type="text"
+              name="User_name"
+              placeholder="your name"
+              size="50"
+            />
+          </div>
+          <div class="col-md-12 say_hello_input_row_col">
+            <input
+              class="border-radius-999 input_border_none"
+              type="text"
+              name="User_email"
+              placeholder="your email"
+              size="50"
+            />
+          </div>
+          <div class="col-md-12 say_hello_input_row_col">
+            <input
+              class="border-radius-999 input_border_none"
+              type="tel"
+              name="User_phone_number"
+              placeholder="your phone number"
+              size="50"
+            />
+          </div>
+          <div class="col-md-12 say_hello_input_row_col">
+            <textarea
+              class="say_hello_input_textarea input_border_none"
+              name="User_message"
+              id=""
+              cols="50"
+              rows="10"
+            >
+        your message</textarea
+            >
+          </div>
+
+          <div class="col-md-12">
+            <button class="btn btn-dark" type="submit">submit</button>
+          </div>
+
+          <div class="col-md-12">
+            <h3>thank you for getting in touch</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

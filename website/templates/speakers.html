@@ -1,0 +1,50 @@
+{% extends 'main.html' %} {%block content %}{% load static %}
+<title>{{title}}</title>
+
+<section id="speakers_page">
+  <div class="your_speaking_events_container_img hero_image_background"></div>
+
+  <div class="your_speaking_events_container_search">
+    <!-- Search form -->
+    <div class="active-cyan-4 mb-4">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search"
+        aria-label="Search"
+      />
+    </div>
+  </div>
+
+  <div class="get_verified text-align-center hero_image_background">
+    <div class="get_verified_content">
+      <div class="get_verified_box_text">
+        <h1>get verified</h1>
+        <p>use the space below to express interest in becoming verified</p>
+      </div>
+
+      <div class="get_verified_box_input">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 get_verified_box_input_detail">
+              <input
+                class="border-radius-999"
+                type="email"
+                name="verified_email"
+                placeholder="your email"
+                size="50"
+              />
+            </div>
+            <div class="col-12 get_verified_box_input_detail">
+              <button class="btn btn-dark border-radius-999" type="submit">
+                submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
