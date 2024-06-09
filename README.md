@@ -1,6 +1,7 @@
 Orient Rods UK Website
 
-<img width="1728" alt="image" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/ca4c5ffa-134e-40a3-8e65-5a68c811b4e6">
+<img width="1693" alt="Screenshot 2024-06-09 at 20 45 29" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/f7fc5419-d93b-4e69-a303-c41192b99bbd">
+
 
 
 This repository contains the code for the Orient Rods UK website - https://orientrodsuk.com, a small business platform dedicated to providing high-quality fishing rods and accessories. While the website may not be groundbreaking, it has effectively served its purpose for years, offering a user-friendly and aesthetically pleasing design that meets the needs of our customers.
@@ -19,7 +20,8 @@ Key Features
 
 
 
-<img width="857" alt="image" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/097dddd3-8bee-4226-8d96-067403d07458">
+<img width="732" alt="Screenshot 2024-06-09 at 20 46 33" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/9b03b0a4-c2bb-4001-9a5b-843509706106">
+
 
 
 
@@ -36,4 +38,4 @@ Conclusion
 
 Although the Orient Rods UK website is not exceptionally advanced, it has reliably served the business for years, providing a pleasant and functional experience for users. The site’s straightforward design and user-friendly interface have been key to its success, helping customers easily find and purchase the products they need.
 
-<img width="1728" alt="image" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/9b9d118d-0ff9-48d5-bc9d-72e544669da4">
+<img width="1135" alt="Screenshot 2024-06-09 at 20 48 13" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/1d2c8990-6fc1-4aa3-bbd6-f6777882053e">
