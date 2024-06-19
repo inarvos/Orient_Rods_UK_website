@@ -1,10 +1,20 @@
-Orient Rods UK Website
+Orient Rods UK website.
 
 <img width="1693" alt="Screenshot 2024-06-09 at 20 45 29" src="https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/f7fc5419-d93b-4e69-a303-c41192b99bbd">
+ 
 
 
 
 This repository contains the code for the Orient Rods UK website - https://orientrodsuk.com, a small business platform dedicated to providing high-quality fishing rods and accessories. While the website may not be groundbreaking, it has effectively served its purpose for years, offering a user-friendly and aesthetically pleasing design that meets the needs of our customers.
+ 
+
+
+
+![IMG_0386](https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/087b90ce-aed8-43b3-994b-4517bd81e619)
+
+ 
+
+
 
 Overview
 
@@ -12,10 +22,10 @@ The Orient Rods UK website is built with a focus on simplicity and usability. It
 
 Key Features
 
-- Product Listings: Detailed pages for each product, including descriptions, images, and pricing information.
-- User-Friendly Design: The website layout is designed to be easy to navigate, with clear menus and accessible information.
-- Responsive Layout: Ensures that the site looks good and functions well on both desktop and mobile devices.
-- Contact Information: Easy-to-find contact details and a contact form for customer inquiries.
+- Product Listings: Detailed pages for each product, including descriptions, images, and pricing information;
+- User-Friendly Design: The website layout is designed to be easy to navigate, with clear menus and accessible information;
+- Responsive Layout: Ensures that the site looks good and functions well on both desktop and mobile devices;
+- Contact Information: Easy-to-find contact details and a contact form for customer inquiries;
 - SEO-Friendly: Basic SEO optimizations to help improve search engine rankings and visibility.
 
 
@@ -29,10 +39,18 @@ Key Features
 Technology Stack
 
 The website is built using:
-- HTML/CSS: For structure and styling.
-- JavaScript: For interactive elements and functionality.
-- PHP: Server-side scripting for dynamic content.
+- HTML/CSS: For structure and styling;
+- JavaScript: For interactive elements and functionality;
+- PHP: Server-side scripting for dynamic content;
 - MySQL: Database management for storing product and customer information.
+ 
+
+
+
+![IMG_0392](https://github.com/inarvos/Orient_Rods_UK_website/assets/37037175/3a16ca96-892c-40c1-979e-1f5c4a8eb329)
+ 
+
+
 
 Conclusion
 
