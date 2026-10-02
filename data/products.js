@@ -1,0 +1,220 @@
+/*
+  This is the only file you need to edit for prices, product text and photo folders.
+  Add product photos as assets/products/<slug>/1.jpg, 2.jpg and 3.jpg.
+*/
+window.ORIENT_PRODUCTS = [
+  {
+    slug: "venus-v2-13-35lb",
+    category: "rods",
+    group: "carp",
+    name: "Venus V2",
+    variant: "13' 3.5lb",
+    price: "Price on request",
+    action: "Butt Drive",
+    summary: "A long-range sports rod with a powerful Butt Section and a highly responsive tip.",
+    description: "Venus V2 is designed primarily for sporting challenges and long-distance work. Its Butt Drive construction delivers a powerful base while retaining the feel needed for accurate casting.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "50mm S-KL SIC, K-series single-foot"], ["Weight", "420g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m+"], ["Reel seat", "Orient carbon with Fuji components"]]
+  },
+  {
+    slug: "astra-10-35lb",
+    category: "rods",
+    group: "carp",
+    name: "Astra",
+    variant: "10' 3.5lb",
+    price: "From £180.00",
+    action: "Butt Drive",
+    summary: "A compact, light and genuinely powerful rod for bankside, stalking and boat work.",
+    description: "Astra brings long-range potential to a compact platform. With small transport dimensions and a 242g weight, it remains at home on the bank, in difficult coastal conditions, from the surface or from a boat.",
+    specs: [["Blank", "Toray 40T + 46T"], ["Guides", "K-series 30–12mm"], ["Weight", "242g"], ["Casting weight", "Up to 100g"], ["Casting distance", "150m+"], ["Reel seat", "Fuji DNPSD 16"]]
+  },
+  {
+    slug: "galax-13-35lb",
+    category: "rods",
+    group: "carp",
+    name: "Galax",
+    variant: "13' 3.5lb",
+    price: "Price on request",
+    action: "Top Drive",
+    summary: "A long-range platform with a powerful tip and a softer butt for an efficient casting arc.",
+    description: "Galax uses a Top Drive layout: a more powerful tip section paired with a softer butt section. This helps create acceleration through a shorter arc while stabilising quickly after the cast.",
+    specs: [["Blank", "Toray Japan 30T + 40T"], ["Guides", "50mm TLTSG ZrO2, K-series tip"], ["Weight", "420g"], ["Casting weight", "Up to 125g"], ["Casting distance", "200m"], ["Reel seat", "Fuji"]]
+  },
+  {
+    slug: "iva-13-35lb",
+    category: "rods",
+    group: "carp",
+    name: "IVA",
+    variant: "13' 3.5lb",
+    price: "Price on request",
+    action: "Top Drive",
+    summary: "A five-guide long-range rod developed for stability, strength and an elegant carbon finish.",
+    description: "IVA combines a Top Drive blank with the patented 5G guide system. The design minimises line overlap while the carbon handle and engraved reel-seat details complete a distinctive finish.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G Fuji K-series SIC, 30mm first guide"], ["Weight", "350g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m+"], ["Butt cap", "Black anodised aluminium with carbon insert"]]
+  },
+  {
+    slug: "iva-13-37lb",
+    category: "rods",
+    group: "carp",
+    name: "IVA Limited Edition",
+    variant: "13' 3.7lb",
+    price: "Price on request",
+    action: "Top Drive",
+    summary: "A stiffer limited-edition IVA with an exclusive Four Cross Carbon finish.",
+    description: "Built from the IVA 3.5lb blank with a measured increase in stiffness, this limited model has an exclusive Japanese Toray Four Cross Carbon final cover. It is a long-range rod with the familiar IVA balance and a distinctive titanium-carbon butt cap.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G Fuji K-series SIC, 30mm first guide"], ["Weight", "362g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m+"], ["Butt cap", "Titanium with carbon insert"]]
+  },
+  {
+    slug: "chameleon-ultimate-13-36oz",
+    category: "rods",
+    group: "spod-marker",
+    name: "Chameleon Ultimate",
+    variant: "13' 3–6oz",
+    price: "Price on request",
+    action: "Butt Drive",
+    summary: "A light but powerful multi-purpose rod for extreme fishing, spod and marker work.",
+    description: "Chameleon Ultimate combines a high-modulus carbon blank with a Slit Carbon Toray spiral finish. Its wide working range makes it suitable as a working, spod or marker rod when conditions demand more from a single platform.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G K-series"], ["Weight", "385g"], ["Casting range", "Up to 6oz"], ["Casting distance", "200m+"], ["Handle", "Kevlar-carbon spiral finish"]]
+  },
+  {
+    slug: "bestia-12-35lb",
+    category: "rods",
+    group: "carp",
+    name: "Bestia",
+    variant: "12' 3.5lb",
+    price: "£250.00",
+    action: "Full Drive",
+    summary: "A lighter Full Drive model with a stronger tip section for confident acceleration.",
+    description: "Bestia 12' 3.5lb offers the universal character of the Full Drive range in a shorter, lighter format. The strengthened tip supports acceleration and keeps the blank working cleanly through its intended casting range.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Finish", "3K twill carbon, 2K epoxy varnish"], ["Weight", "330g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m"], ["Guides", "50mm S-KL SIC"]]
+  },
+  {
+    slug: "bestia-13-35lb",
+    category: "rods",
+    group: "carp",
+    name: "Bestia",
+    variant: "13' 3.5lb",
+    price: "£270.00",
+    action: "Full Drive",
+    summary: "A universal Full Drive rod balancing fast casting recovery with a progressive playing action.",
+    description: "The Bestia 13' 3.5lb is designed to distribute power evenly along the blank. It works as a fast action rod through the cast, then settles into a medium-fast action when playing fish.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Finish", "3K twill carbon, 2K epoxy varnish"], ["Weight", "350g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m"], ["Reel seat", "Fuji DPS 18mm or Orient carbon"]]
+  },
+  {
+    slug: "bestia-ultimate-13-35oz",
+    category: "rods",
+    group: "spod-marker",
+    name: "Bestia Ultimate",
+    variant: "13' 3–5oz",
+    price: "£280.00",
+    action: "Full Drive",
+    summary: "A powerful and sensitive multi-purpose Bestia for long-range work.",
+    description: "Bestia Ultimate adds a broader working range to the Full Drive platform. It has been developed as a strong yet responsive rod that can cover working, spod and marker duties.",
+    specs: [["Weight", "380g"], ["Casting weight", "Up to 150g"], ["Casting distance", "200m+"], ["Action", "Full Drive"], ["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G K-series"]]
+  },
+  {
+    slug: "bestia-ultimate-13-46oz",
+    category: "rods",
+    group: "spod-marker",
+    name: "Bestia Ultimate",
+    variant: "13' 4–6oz",
+    price: "£300.00",
+    action: "Full Drive",
+    summary: "The strongest Bestia Ultimate for high-load casting and specialist work.",
+    description: "This higher-rated Ultimate model keeps the balanced Full Drive response while adding capacity for heavier leads, bait and demanding long-range situations.",
+    specs: [["Weight", "430g"], ["Casting weight", "Up to 200g"], ["Casting distance", "200m+"], ["Action", "Full Drive"], ["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G K-series"]]
+  },
+  {
+    slug: "venus-v3-13-35oz",
+    category: "rods",
+    group: "carp",
+    name: "Venus V3",
+    variant: "13' 3–5oz",
+    price: "Price on request",
+    action: "Butt Drive",
+    summary: "A reinforced Venus for headwinds, PVA work and high-load casting.",
+    description: "Venus V3 is a reinforced development of the V2, designed for large loads and difficult conditions. Changes to the fibre architecture raise rigidity and strength while preserving an elegant blank diameter.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "ALPS S6-GSHRZG"], ["Weight", "405g"], ["Casting distance", "200m+"], ["Action", "Butt Drive"], ["Butt cap", "Titanium-carbon Orient design"]]
+  },
+  {
+    slug: "chameleon-sm-13-50lb",
+    category: "rods",
+    group: "spod-marker",
+    name: "Chameleon SM",
+    variant: "13' 5.0lb Spod / Marker",
+    price: "Price on request",
+    action: "Butt Drive",
+    summary: "A dedicated long-range spod and marker rod with a lighter, sustained casting feel.",
+    description: "Chameleon SM was developed for heavy bait rockets and repeated long-distance casting. Its balance reduces stiffness at the lower blank while retaining enough strength to work up to 200g comfortably.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series"], ["Weight", "397g"], ["Casting weight", "Up to 200g"], ["Casting distance", "200m+"], ["Reel seat", "Fuji TVSTJK 17 with Kevlar insert"]]
+  },
+  {
+    slug: "vektra-vt1-13-35lb",
+    category: "rods",
+    group: "carp",
+    name: "VekTra VT-1",
+    variant: "13' 3.5lb",
+    price: "Price on request",
+    action: "Full Drive",
+    summary: "A thin-blank long-range rod built around synchronized butt and tip release.",
+    description: "VekTra VT-1 reworks the production cycle to reduce blank diameter while maintaining rigidity. The Full Drive character releases energy through a synchronized butt and tip, settling quickly after the cast.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "ALPS S6-GSHRZG"], ["Weight", "380g"], ["Casting distance", "200m+"], ["Action", "Full Drive"], ["Reel seat", "Orient-Fuji with 1K carbon bushing"]]
+  },
+  {
+    slug: "chameleon-feeder-14-150g",
+    category: "rods",
+    group: "feeder",
+    name: "Chameleon Ultimate Feeder",
+    variant: "14' 150g",
+    price: "Price on request",
+    action: "Ultimate feeder",
+    summary: "A long-range feeder rod with four quiver tips and a detailed Kevlar finish.",
+    description: "This extended-function feeder rod is set up for long-distance work with large-capacity reels and a low risk of line overlap. It includes four quiver tips rated 2, 3, 4 and 6oz, with an optional reinforced tip for additional range.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series 30–10mm"], ["Weight", "310g"], ["Blank weight", "173g"], ["Casting distance", "160m+ with 80g flat feeder"], ["Handle", "Portuguese cork and Kevlar details"]]
+  },
+  {
+    slug: "chameleon-s1-s2",
+    category: "rods",
+    group: "carp",
+    name: "Chameleon S1 / S2",
+    variant: "13' 3.5lb / 3–5oz",
+    price: "Price on request",
+    action: "Rear Action",
+    summary: "Stage 1 and Stage 2 evolutions of the Chameleon platform with tuned fibre architecture.",
+    description: "Chameleon S1 and S2 take the established Chameleon blank in two different directions. The Stage 1 and Stage 2 concept combines carbon weaving at different angles to create a highly responsive, self-loading casting feel.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series"], ["Weight", "S1 375g / S2 363g"], ["Casting distance", "200m+"], ["Action", "Rear Action"], ["Handle", "Kevlar-carbon"]]
+  },
+  {
+    slug: "inventa-13-37lb",
+    category: "rods",
+    group: "carp",
+    name: "Inventa",
+    variant: "13' 3.7lb",
+    price: "Price on request",
+    action: "Full Drive",
+    summary: "An innovative distance rod designed to remain comfortable across a wide range of anglers.",
+    description: "Inventa is based on a monolithic blank created by preparing the carbon-fibre bundle before winding with prepreg. The goal is greater comfort and consistency at range, with a distinctive red-carbon and EVA handle design.",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "ALPS S6-GSHRZG"], ["Weight", "375g"], ["Casting distance", "200m+"], ["Action", "Full Drive"], ["Butt cap", "Titanium Orient Rods cap"]]
+  },
+  {
+    slug: "bombus-throwing-stick",
+    category: "sticks",
+    name: "Bombus",
+    variant: "Carbon Throwing Stick",
+    price: "Price on request",
+    action: "Long-range baiting",
+    summary: "A carbon throwing stick with a vacuum-moulded form for powerful, controlled boilie delivery.",
+    description: "Bombus is made using a thermo-compressive vacuum-moulding process. Carbon fibres are arranged to create a controlled boilie rotation and maximum casting distance. A neoprene case is included.",
+    specs: [["Diameters", "23mm, 27mm, 32mm, 34mm"], ["Intended boilies", "18–32mm, depending on diameter"], ["Weight", "108–125g for 27mm"], ["Length", "1000–1300mm"], ["Distance", "130m+"], ["Case", "High-quality neoprene included"]]
+  },
+  {
+    slug: "anacondas-throwing-stick",
+    category: "sticks",
+    name: "AnacondaS",
+    variant: "Carbon Throwing Stick",
+    price: "Price on request",
+    action: "Long-range baiting",
+    summary: "A patented reverse-bend throwing stick for accurate long-range baiting with soft boilies.",
+    description: "AnacondaS uses a patented reverse-bend shape designed not to twist the boilie during casting. The vacuum-moulded carbon construction is optimised for accuracy and long distance, even with softer baits.",
+    specs: [["Diameter", "26mm"], ["Weight", "89–110g"], ["Length", "1000–1300mm"], ["Distance", "Up to 140m"], ["Patents", "Ukraine N101730 and N101733"], ["Case", "High-quality neoprene included"]]
+  }
+];
