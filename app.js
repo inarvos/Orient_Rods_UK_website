@@ -1,251 +1,155 @@
 (() => {
   const site = window.ORIENT_SITE;
-  const products = window.ORIENT_PRODUCTS;
+  // Only menu-level products belong on the public site.  Technical variants
+  // are described within their parent page, rather than becoming extra pages.
+  const publicProductSlugs = new Set([
+    'astra-10-35lb', 'bestia-vc', 'bestia-pp', 'vektra-vt1-13-35lb',
+    'venus-v2-13-35lb', 'venus-v3-13-35oz', 'galax-13-35lb', 'galax-sd-13-40lb',
+    'iva-13-37lb', 'inventa-13-37lb', 'chameleon-ultimate-13-36oz',
+    'chameleon-s1-s2', 'chameleon-sm-13-50lb', 'distance-13-40lb',
+    'chameleon-feeder-14-150g', 'chameleon-distance-feeder-14-35oz',
+    'chameleon-distance-d2-14-36oz', 'chameleon-fx-feeder-135-35lb',
+    'amphitrite-154-47m-120-250', 'bestia-casting-13-47oz',
+    'bombus-throwing-stick', 'anacondas-throwing-stick'
+  ]);
+  const products = window.ORIENT_PRODUCTS.filter(product => publicProductSlugs.has(product.slug));
   const params = new URLSearchParams(window.location.search);
+  // Hostinger's rewrite happens on the server, so the browser keeps the clean
+  // address (for example /vektra) rather than exposing ?route=vektra.
+  const route = (params.get('route') || window.location.pathname || '').replace(/^\/+|\/+$/g, '');
+  const esc = (value = '') => String(value).replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[char]);
 
-  const esc = (value = "") => String(value).replace(/[&<>'"]/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[char]);
-  const productUrl = product => `product.html?product=${encodeURIComponent(product.slug)}`;
-  const categoryUrl = category => `catalogue.html?category=${category}`;
-  const rodGroupUrl = group => `catalogue.html?category=rods&group=${encodeURIComponent(group)}`;
-  const formatPrice = price => price || "Price on request";
-  const productImage = (product, n = 1) => `assets/products/${product.slug}/${n}.jpg`;
+  const aliases = {
+    'venus-v2-13-35lb': 'v2', 'venus-v3-13-35oz': 'v3', 'astra-10-35lb': 'astra',
+    'bestia-vc': 'bestia-vc', 'bestia-pp': 'bestia-pp', 'vektra-vt1-13-35lb': 'vektra', 'galax-13-35lb': 'galax', 'galax-sd-13-40lb': 'galax-sd',
+    'iva-13-37lb': 'iva-37', 'inventa-13-37lb': 'inventa', 'chameleon-ultimate-13-36oz': 'chameleon-ultimate',
+    'chameleon-s1-s2': 'chameleon-s1-s2', 'chameleon-sm-13-50lb': 'chameleon-sm', 'distance-13-40lb': 'distance',
+    'chameleon-feeder-14-150g': 'chameleon-ultimate-feeder', 'chameleon-distance-feeder-14-35oz': 'chameleon-distance-feeder',
+    'chameleon-distance-d2-14-36oz': 'chameleon-distance-d2', 'chameleon-fx-feeder-135-35lb': 'chameleon-fx',
+    'amphitrite-154-47m-120-250': 'amphitrite', 'bestia-casting-13-47oz': 'bestia-casting', 'bombus-throwing-stick': 'bombus', 'anacondas-throwing-stick': 'anacondas'
+  };
+  const url = path => path ? `/${path.replace(/^\/+|\/+$/g, '')}` : '/';
+  const productPath = product => aliases[product.slug] || product.slug;
+  const productUrl = product => url(productPath(product));
+  const categoryUrl = category => category === 'sticks' ? url('throwing-sticks') : url('rods');
+  const productImage = (product, n = 1) => `/assets/products/${product.imageSlug || product.slug}/${n}.${product.imageExtensions?.[n] || 'jpg'}`;
+  const formatPrice = price => price || 'Price on request';
+
   const rodGroups = [
-    { slug: 'carp', title: 'Carp fishing rods', intro: 'Distance and playing rods for modern carp fishing.' },
-    { slug: 'spod-marker', title: 'Spod & marker rods', intro: 'Purpose-built power for baiting, marking and demanding casting.' },
-    { slug: 'feeder', title: 'Feeder rods', intro: 'Long-range feeder performance with specialist quiver-tip control.' }
+    { slug: 'carp', path: 'carp-fishing-rods', title: 'Carp fishing rods', intro: 'The complete Orient carp, distance, spod and marker range.' },
+    { slug: 'feeder', path: 'feeder-rods', title: 'Feeder rods', intro: 'Specialist Chameleon feeder rods for range and accuracy.' },
+    { slug: 'seafishing', path: 'seafishing-rods', title: 'Seafishing rods', intro: 'Dedicated Orient sea-fishing rods.' },
+    { slug: 'casting', path: 'casting-rods', title: 'Casting rods', intro: 'Purpose-built casting models for maximum-load work.' }
   ];
-  const rodGroup = slug => rodGroups.find(group => group.slug === slug);
+  const series = {
+    carp: [
+      { slug: 'astra', path: 'astra-series', title: 'Astra', primaryProduct: 'astra-10-35lb' },
+      { slug: 'bestia', path: 'bestia-series', title: 'Bestia', children: [{ slug: 'vc', title: 'Varnish coating (VC)', products: ['bestia-vc'] }, { slug: 'pp', title: 'Film coated (PP)', products: ['bestia-pp'] }] },
+      { slug: 'vektra', path: 'vektra', title: 'VekTra', primaryProduct: 'vektra-vt1-13-35lb' },
+      { slug: 'venus', path: 'venus-series', title: 'Venus', children: [{ slug: 'v2', title: 'V-2', products: ['venus-v2-13-35lb'] }, { slug: 'v3', title: 'V-3', products: ['venus-v3-13-35oz'] }] },
+      { slug: 'galax', path: 'galax-series', title: 'Galax', children: [{ slug: 'galax', title: "13' 3.5lb", products: ['galax-13-35lb'] }, { slug: 'galax-sd', title: "SD 13' 4.0lb", products: ['galax-sd-13-40lb'] }] },
+      { slug: 'iva', path: 'iva-series', title: 'Iva', children: [{ slug: '37lb', title: '3.7lb', products: ['iva-13-37lb'] }] },
+      { slug: 'inventa', path: 'inventa', title: 'Inventa', primaryProduct: 'inventa-13-37lb' },
+      { slug: 'chameleon', path: 'chameleon-series', title: 'Chameleon', children: [
+        { slug: 'ultimate', title: 'Ultimate', products: ['chameleon-ultimate-13-36oz'] },
+        { slug: 's1-s2', title: 'S1, S2', products: ['chameleon-s1-s2'] },
+        { slug: 'sm', title: 'SM', products: ['chameleon-sm-13-50lb'] }
+      ] }, { slug: 'distance', path: 'distance', title: 'Distance', primaryProduct: 'distance-13-40lb' }
+    ],
+    feeder: [
+      { slug: 'chameleon-ultimate-feeder', path: 'chameleon-ultimate', title: 'Ultimate', primaryProduct: 'chameleon-feeder-14-150g', products: ['chameleon-feeder-14-150g'] },
+      { slug: 'chameleon-distance', path: 'chameleon-distance', title: 'Distance', children: [
+        { slug: 'distance-feeder', title: '14 ft 3–5 oz', products: ['chameleon-distance-feeder-14-35oz'] },
+        { slug: 'distance-d2', title: 'D2 14 ft 3–6 oz', products: ['chameleon-distance-d2-14-36oz'] }
+      ] }, { slug: 'chameleon-fx', path: 'chameleon-fx', title: 'FX', primaryProduct: 'chameleon-fx-feeder-135-35lb', products: ['chameleon-fx-feeder-135-35lb'] }
+    ],
+    seafishing: [{ slug: 'amphitrite', path: 'amphitrite', title: 'Amphitrite', primaryProduct: 'amphitrite-154-47m-120-250', products: ['amphitrite-154-47m-120-250'] }],
+    casting: [{ slug: 'bestia-casting', path: 'bestia-casting', title: 'Bestia Casting', primaryProduct: 'bestia-casting-13-47oz', products: ['bestia-casting-13-47oz'] }]
+  };
+  const groupFor = slug => rodGroups.find(item => item.slug === slug);
+  const seriesFor = (group, slug) => (series[group] || []).find(item => item.slug === slug);
+  const seriesPageName = item => `${item.title} Series`;
+  const itemsFor = (group, item, child = '') => {
+    const childData = child && item.children?.find(entry => entry.slug === child);
+    const slugs = childData?.products || item.products;
+    let matches = slugs ? products.filter(product => slugs.includes(product.slug)) : products.filter(product => product.category === 'rods' && product.group === group && product.series === item.slug);
+    return matches;
+  };
+  const groupUrl = group => url(`rods/${group.path}`);
+  const seriesUrl = (group, item, child = '') => url(`rods/${group.path}/${item.path}${child ? `/${child}` : ''}`);
 
-  function productImageMarkup(product, className = "product-card__image") {
-    return `<div class="${className}" data-product-image>
-      <img src="${productImage(product)}" alt="${esc(product.name)} ${esc(product.variant)}" loading="lazy" />
-      <div class="image-fallback" aria-hidden="true"></div>
-    </div>`;
+  function catalogueState() {
+    if (params.get('category')) { const group = groupFor(params.get('group')); return { category: params.get('category') === 'sticks' ? 'sticks' : 'rods', group, item: group && seriesFor(group.slug, params.get('series')), child: params.get('finish') || '' }; }
+    if (route === 'throwing-sticks') return { category: 'sticks' };
+    const pieces = route.split('/'); if (pieces[0] !== 'rods') return { category: 'rods' };
+    const group = rodGroups.find(item => item.path === pieces[1]); const item = group && (series[group.slug] || []).find(entry => entry.path === pieces[2]);
+    return { category: 'rods', group, item, child: pieces[3] || '' };
   }
+  function productImageMarkup(product, className = 'product-card__image') { return `<div class="${className}" data-product-image><img src="${productImage(product)}" alt="${esc(product.name)} ${esc(product.variant)}" loading="lazy" /><div class="image-fallback" aria-hidden="true"></div></div>`; }
+  function productCard(product) { return `<article class="product-card"><a class="product-card__visual" href="${productUrl(product)}" aria-label="View ${esc(product.name)} ${esc(product.variant)}">${productImageMarkup(product)}</a><div class="product-card__body"><p class="product-card__family">${esc(product.action)}</p><h3><a href="${productUrl(product)}">${esc(product.name)}</a></h3><p class="product-card__variant">${esc(product.variant)}</p><div class="product-card__bottom"><span class="product-card__price">${esc(formatPrice(product.price))}</span><a href="${productUrl(product)}" class="product-card__view">Details</a></div></div></article>`; }
+  function installImageFallbacks(scope = document) { scope.querySelectorAll('[data-product-image] img').forEach(image => { const fallback = () => image.closest('[data-product-image]').classList.add('is-fallback'); if (image.complete && image.naturalWidth === 0) fallback(); image.addEventListener('error', fallback, { once: true }); }); }
 
-  function productCard(product) {
-    return `<article class="product-card">
-      <a class="product-card__visual" href="${productUrl(product)}" aria-label="View ${esc(product.name)} ${esc(product.variant)}">${productImageMarkup(product)}</a>
-      <div class="product-card__body">
-        <p class="product-card__family">${esc(product.action)}</p>
-        <h3><a href="${productUrl(product)}">${esc(product.name)}</a></h3>
-        <p class="product-card__variant">${esc(product.variant)}</p>
-        <div class="product-card__bottom"><span class="product-card__price">${esc(formatPrice(product.price))}</span><a href="${productUrl(product)}" class="product-card__view">Details</a></div>
-      </div>
-    </article>`;
-  }
-
-  function installImageFallbacks(scope = document) {
-    scope.querySelectorAll('[data-product-image] img').forEach(img => {
-      const showFallback = () => img.closest('[data-product-image]').classList.add('is-fallback');
-      if (img.complete && img.naturalWidth === 0) showFallback();
-      img.addEventListener('error', showFallback, { once: true });
-    });
-  }
-
+  const productBySlug = slug => products.find(product => product.slug === slug);
+  const availableModels = product => product.models || [{
+    label: product.officialTitle || product.modelLabel || `${product.name} ${product.variant}`,
+    code: product.officialCode || product.code,
+    price: product.officialPrice || product.price
+  }];
+  const descriptionMarkup = product => String(product.description || '').split(/\n\s*\n/).filter(Boolean).map(paragraph => { const lines = paragraph.split('\n').map(line => line.trim()).filter(Boolean); const bulletLines = lines.slice(1); if (lines.length > 1 && bulletLines.length && bulletLines.every(line => line.startsWith('• '))) return `<p>${esc(lines[0])}</p><ul class="product-description__list">${bulletLines.map(line => `<li>${esc(line.slice(2))}</li>`).join('')}</ul>`; return `<p>${esc(paragraph)}</p>`; }).join('');
+  const characteristicsMarkup = product => {
+    if (!product.specs?.length || /general characteristics:/i.test(product.description || '')) return '';
+    return `<p>General characteristics:</p><ul class="product-description__list">${product.specs.map(([label, value]) => `<li><strong>${esc(label)}:</strong> ${esc(value)}</li>`).join('')}</ul>`;
+  };
+  const itemUrl = (group, item) => item.primaryProduct ? productUrl(productBySlug(item.primaryProduct)) : seriesUrl(group, item);
+  const childUrl = (group, item, child) => child.products?.length === 1 ? productUrl(productBySlug(child.products[0])) : seriesUrl(group, item, child.slug);
+  const navCurrentClass = href => href === url(route) ? ' nav-link--current' : '';
+  const navCurrentAria = href => href === url(route) ? ' aria-current="page"' : '';
+  function desktopItem(group, item) { if (!item.children) { const href = itemUrl(group, item); return `<div class="nav-series"><a class="nav-series__title${navCurrentClass(href)}" href="${href}"${navCurrentAria(href)}>${esc(item.title)}</a></div>`; } const links = item.children.map(child => { const href = childUrl(group, item, child); return `<a class="nav-series__child${navCurrentClass(href)}" href="${href}"${navCurrentAria(href)}>${esc(child.title)}</a>`; }).join(''); return `<div class="nav-series nav-series--has-children"><a class="nav-series__title" href="${seriesUrl(group, item)}">${esc(item.title)}<span aria-hidden="true">›</span></a><div class="nav-series__flyout">${links}</div></div>`; }
+  function mobileItem(group, item) { if (!item.children) { const href = itemUrl(group, item); return `<li class="mobile-drawer__series"><a class="${navCurrentClass(href).trim()}" href="${href}"${navCurrentAria(href)}>${esc(item.title)}</a></li>`; } const links = item.children.map(child => { const href = childUrl(group, item, child); return `<li><a class="${navCurrentClass(href).trim()}" href="${href}"${navCurrentAria(href)}>${esc(child.title)}</a></li>`; }).join(''); return `<li class="mobile-menu-node mobile-drawer__series"><div class="mobile-drawer__row"><button class="mobile-drawer__label" type="button" aria-label="Show ${esc(item.title)}" aria-expanded="false">${esc(item.title)}</button><button class="mobile-drawer__expander" type="button" aria-label="Show ${esc(item.title)}" aria-expanded="false"><span aria-hidden="true">+</span></button></div><ul class="mobile-drawer__submenu mobile-drawer__submenu--models">${links}</ul></li>`; }
   function createHeader() {
-    const rodLinks = products.filter(p => p.category === 'rods');
-    const stickLinks = products.filter(p => p.category === 'sticks');
-    const desktopDirectGroup = (title, category, items) => `<li class="nav-item nav-item--has-menu">
-      <a href="${categoryUrl(category)}">${title}</a>
-      <button class="nav-trigger" type="button" aria-label="Show ${title} models" aria-expanded="false"><span aria-hidden="true">+</span></button>
-      <div class="nav-panel">
-        ${items.map(p => `<a href="${productUrl(p)}">${esc(p.name)} <small>${esc(p.variant)}</small></a>`).join('')}
-      </div>
-    </li>`;
-    const desktopRodsGroup = () => `<li class="nav-item nav-item--has-menu">
-      <a href="${categoryUrl('rods')}">Rods</a>
-      <button class="nav-trigger" type="button" aria-label="Show rod categories" aria-expanded="false"><span aria-hidden="true">+</span></button>
-      <div class="nav-panel nav-panel--hierarchy">
-        ${rodGroups.map(group => `<div class="nav-level-two">
-          <a href="${rodGroupUrl(group.slug)}">${esc(group.title)}<span aria-hidden="true">›</span></a>
-          <div class="nav-level-three">${rodLinks.filter(product => product.group === group.slug).map(product => `<a href="${productUrl(product)}">${esc(product.name)} <small>${esc(product.variant)}</small></a>`).join('')}</div>
-        </div>`).join('')}
-      </div>
-    </li>`;
-    const mobileDirectGroup = (title, category, items) => `<li class="mobile-menu-node mobile-drawer__item">
-      <div class="mobile-drawer__row"><a href="${categoryUrl(category)}">${title}</a><button class="mobile-drawer__expander" type="button" aria-label="Show ${title} models" aria-expanded="false"><span aria-hidden="true">+</span></button></div>
-      <ul class="mobile-drawer__submenu">${items.map(p => `<li><a href="${productUrl(p)}">${esc(p.name)} <small>${esc(p.variant)}</small></a></li>`).join('')}</ul>
-    </li>`;
-    const mobileRodsGroup = () => `<li class="mobile-menu-node mobile-drawer__item">
-      <div class="mobile-drawer__row"><a href="${categoryUrl('rods')}">Rods</a><button class="mobile-drawer__expander" type="button" aria-label="Show rod categories" aria-expanded="false"><span aria-hidden="true">+</span></button></div>
-      <ul class="mobile-drawer__submenu">
-        ${rodGroups.map(group => `<li class="mobile-menu-node mobile-drawer__group">
-          <div class="mobile-drawer__row"><a href="${rodGroupUrl(group.slug)}">${esc(group.title)}</a><button class="mobile-drawer__expander" type="button" aria-label="Show ${esc(group.title)} models" aria-expanded="false"><span aria-hidden="true">+</span></button></div>
-          <ul class="mobile-drawer__submenu mobile-drawer__submenu--models">${rodLinks.filter(product => product.group === group.slug).map(product => `<li><a href="${productUrl(product)}">${esc(product.name)} <small>${esc(product.variant)}</small></a></li>`).join('')}</ul>
-        </li>`).join('')}
-      </ul>
-    </li>`;
+    const stickLinks = products.filter(product => product.category === 'sticks');
     document.querySelectorAll('[data-site-header]').forEach(host => {
       const drawerId = `mobile-navigation-${Math.random().toString(36).slice(2, 8)}`;
-      host.innerHTML = `<div class="container nav-shell">
-        <a class="brand" href="index.html" aria-label="${site.name} home"><span class="brand__mark">O</span><span>Orient <b>Rods</b><small>UK</small></span></a>
-        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="${drawerId}"><span></span><span></span><span></span></button>
-        <nav id="site-navigation" class="site-nav" aria-label="Main navigation"><ul>
-          ${desktopRodsGroup()}
-          ${desktopDirectGroup('Throwing sticks', 'sticks', stickLinks)}
-          <li class="nav-item"><a href="contact.html">Contact</a></li>
-        </ul></nav>
-      </div>`;
-      host.insertAdjacentHTML('afterend', `<aside class="mobile-drawer" id="${drawerId}" aria-hidden="true">
-        <button class="mobile-drawer__backdrop" type="button" aria-label="Close navigation"></button>
-        <nav class="mobile-drawer__panel" aria-label="Mobile navigation">
-          <div class="mobile-drawer__top"><a class="brand" href="index.html" aria-label="${site.name} home"><span class="brand__mark">O</span><span>Orient <b>Rods</b><small>UK</small></span></a><button class="mobile-drawer__close" type="button" aria-label="Close navigation">×</button></div>
-          <ul class="mobile-drawer__list">
-            ${mobileRodsGroup()}
-            ${mobileDirectGroup('Throwing sticks', 'sticks', stickLinks)}
-            <li class="mobile-drawer__item"><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </aside>`);
-      const toggle = host.querySelector('.menu-toggle');
-      const nav = host.querySelector('.site-nav');
-      const drawer = document.getElementById(drawerId);
-      const closeDrawer = () => {
-        document.body.classList.remove('mobile-menu-open');
-        drawer.setAttribute('aria-hidden', 'true');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open navigation');
-      };
-      const openDrawer = () => {
-        document.body.classList.add('mobile-menu-open');
-        drawer.setAttribute('aria-hidden', 'false');
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'Close navigation');
-      };
-      toggle.addEventListener('click', () => document.body.classList.contains('mobile-menu-open') ? closeDrawer() : openDrawer());
-      drawer.querySelector('.mobile-drawer__close').addEventListener('click', closeDrawer);
-      drawer.querySelector('.mobile-drawer__backdrop').addEventListener('click', closeDrawer);
-      const desktopNavigation = window.matchMedia('(min-width: 901px)');
-      const closeMobileNavigation = () => {
-        if (!desktopNavigation.matches) return;
-        closeDrawer();
-      };
-      desktopNavigation.addEventListener('change', closeMobileNavigation);
-      host.querySelectorAll('.nav-trigger').forEach(trigger => trigger.addEventListener('click', () => {
-        const parent = trigger.closest('.nav-item');
-        const wasOpen = parent.classList.contains('menu-open');
-        host.querySelectorAll('.nav-item--has-menu').forEach(item => item.classList.remove('menu-open'));
-        host.querySelectorAll('.nav-trigger').forEach(button => button.setAttribute('aria-expanded', 'false'));
-        if (!wasOpen) { parent.classList.add('menu-open'); trigger.setAttribute('aria-expanded', 'true'); }
-      }));
-      drawer.querySelectorAll('.mobile-drawer__expander').forEach(trigger => trigger.addEventListener('click', () => {
-        const parent = trigger.closest('.mobile-menu-node');
-        const wasOpen = parent.classList.contains('is-open');
-        [...parent.parentElement.children].filter(item => item.classList.contains('mobile-menu-node')).forEach(item => {
-          item.classList.remove('is-open');
-          item.querySelector(':scope > .mobile-drawer__row .mobile-drawer__expander')?.setAttribute('aria-expanded', 'false');
-        });
-        if (!wasOpen) { parent.classList.add('is-open'); trigger.setAttribute('aria-expanded', 'true'); }
-      }));
-      nav.addEventListener('keydown', event => { if (event.key === 'Escape') { host.querySelectorAll('.nav-item--has-menu').forEach(item => item.classList.remove('menu-open')); } });
-      drawer.addEventListener('keydown', event => { if (event.key === 'Escape') closeDrawer(); });
+      const desktopRods = `<li class="nav-item nav-item--has-menu"><a href="${categoryUrl('rods')}">Rods</a><button class="nav-trigger" type="button" aria-label="Show rod categories" aria-expanded="false"><span aria-hidden="true">+</span></button><div class="nav-panel nav-panel--hierarchy">${rodGroups.map(group => `<div class="nav-level-two"><a href="${groupUrl(group)}">${esc(group.title)}<span aria-hidden="true">›</span></a><div class="nav-level-three">${(series[group.slug] || []).map(item => desktopItem(group, item)).join('')}</div></div>`).join('')}</div></li>`;
+      const desktopSticks = `<li class="nav-item nav-item--has-menu"><a href="${categoryUrl('sticks')}">Throwing sticks</a><button class="nav-trigger" type="button" aria-label="Show throwing sticks" aria-expanded="false"><span aria-hidden="true">+</span></button><div class="nav-panel nav-panel--hierarchy">${stickLinks.map(product => { const href = productUrl(product); return `<div class="nav-level-two"><a class="${navCurrentClass(href).trim()}" href="${href}"${navCurrentAria(href)}>${esc(product.name)}</a></div>`; }).join('')}</div></li>`;
+      const mobileRods = `<li class="mobile-menu-node mobile-drawer__item"><div class="mobile-drawer__row"><button class="mobile-drawer__label" type="button" aria-label="Show rod categories" aria-expanded="false">Rods</button><button class="mobile-drawer__expander" type="button" aria-label="Show rod categories" aria-expanded="false"><span aria-hidden="true">+</span></button></div><ul class="mobile-drawer__submenu">${rodGroups.map(group => `<li class="mobile-menu-node mobile-drawer__group"><div class="mobile-drawer__row"><button class="mobile-drawer__label" type="button" aria-label="Show ${esc(group.title)}" aria-expanded="false">${esc(group.title)}</button><button class="mobile-drawer__expander" type="button" aria-label="Show ${esc(group.title)}" aria-expanded="false"><span aria-hidden="true">+</span></button></div><ul class="mobile-drawer__submenu mobile-drawer__submenu--models">${(series[group.slug] || []).map(item => mobileItem(group, item)).join('')}</ul></li>`).join('')}</ul></li>`;
+      const mobileSticks = `<li class="mobile-menu-node mobile-drawer__item"><div class="mobile-drawer__row"><button class="mobile-drawer__label" type="button" aria-label="Show throwing sticks" aria-expanded="false">Throwing sticks</button><button class="mobile-drawer__expander" type="button" aria-label="Show throwing sticks" aria-expanded="false"><span aria-hidden="true">+</span></button></div><ul class="mobile-drawer__submenu">${stickLinks.map(product => { const href = productUrl(product); return `<li class="mobile-drawer__group"><a class="mobile-drawer__stick-link${navCurrentClass(href)}" href="${href}"${navCurrentAria(href)}>${esc(product.name)}</a></li>`; }).join('')}</ul></li>`;
+      host.innerHTML = `<div class="container nav-shell"><a class="brand" href="/" aria-label="${site.name} home"><span class="brand__mark">O</span><span>Orient <b>Rods</b><small>UK</small></span></a><button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="${drawerId}"><span></span><span></span><span></span></button><nav class="site-nav" aria-label="Main navigation"><ul>${desktopRods}${desktopSticks}<li class="nav-item"><a href="${url('contact')}">Contact</a></li></ul></nav></div>`;
+      host.insertAdjacentHTML('afterend', `<aside class="mobile-drawer" id="${drawerId}" aria-hidden="true"><button class="mobile-drawer__backdrop" type="button" aria-label="Close navigation"></button><nav class="mobile-drawer__panel" aria-label="Mobile navigation"><div class="mobile-drawer__top"><a class="brand" href="/" aria-label="${site.name} home"><span class="brand__mark">O</span><span>Orient <b>Rods</b><small>UK</small></span></a><button class="mobile-drawer__close" type="button" aria-label="Close navigation">×</button></div><ul class="mobile-drawer__list">${mobileRods}${mobileSticks}<li class="mobile-drawer__item"><a href="${url('contact')}">Contact</a></li></ul></nav></aside>`);
+      const toggle = host.querySelector('.menu-toggle'); const drawer = document.getElementById(drawerId); const close = () => { document.body.classList.remove('mobile-menu-open'); drawer.setAttribute('aria-hidden', 'true'); toggle.setAttribute('aria-expanded', 'false'); }; const openCurrentMobilePath = () => { drawer.querySelectorAll('.mobile-menu-node').forEach(node => { node.classList.remove('is-open'); node.querySelectorAll(':scope > .mobile-drawer__row button').forEach(button => button.setAttribute('aria-expanded', 'false')); }); const current = drawer.querySelector('.nav-link--current'); if (!current) return; let node = current.closest('.mobile-menu-node'); while (node) { node.classList.add('is-open'); node.querySelectorAll(':scope > .mobile-drawer__row button').forEach(button => button.setAttribute('aria-expanded', 'true')); node = node.parentElement.closest('.mobile-menu-node'); } }; const open = () => { openCurrentMobilePath(); document.body.classList.add('mobile-menu-open'); drawer.setAttribute('aria-hidden', 'false'); toggle.setAttribute('aria-expanded', 'true'); };
+      toggle.addEventListener('click', () => document.body.classList.contains('mobile-menu-open') ? close() : open()); drawer.querySelector('.mobile-drawer__close').addEventListener('click', close); drawer.querySelector('.mobile-drawer__backdrop').addEventListener('click', close);
+      host.querySelectorAll('.nav-trigger').forEach(trigger => trigger.addEventListener('click', () => { const parent = trigger.closest('.nav-item'); const openNow = parent.classList.contains('menu-open'); host.querySelectorAll('.nav-item--has-menu').forEach(item => item.classList.remove('menu-open')); host.querySelectorAll('.nav-trigger').forEach(button => button.setAttribute('aria-expanded', 'false')); if (!openNow) { parent.classList.add('menu-open'); trigger.setAttribute('aria-expanded', 'true'); } }));
+      host.querySelectorAll('.nav-item--has-menu').forEach(item => { let closeTimer; const panel = item.querySelector('.nav-panel'); const show = () => { clearTimeout(closeTimer); item.classList.add('menu-open'); item.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'true'); }; const hideLater = () => { closeTimer = window.setTimeout(() => { item.classList.remove('menu-open'); item.querySelector('.nav-trigger')?.setAttribute('aria-expanded', 'false'); }, 650); }; item.addEventListener('mouseenter', show); item.addEventListener('mouseleave', hideLater); panel.addEventListener('mouseenter', show); panel.addEventListener('mouseleave', hideLater); });
+      drawer.querySelectorAll('.mobile-drawer__expander, .mobile-drawer__label').forEach(trigger => trigger.addEventListener('click', () => { const parent = trigger.closest('.mobile-menu-node'); const openNow = parent.classList.contains('is-open'); [...parent.parentElement.children].filter(item => item.classList.contains('mobile-menu-node')).forEach(item => { item.classList.remove('is-open'); item.querySelectorAll(':scope > .mobile-drawer__row button').forEach(button => button.setAttribute('aria-expanded', 'false')); }); if (!openNow) { parent.classList.add('is-open'); parent.querySelectorAll(':scope > .mobile-drawer__row button').forEach(button => button.setAttribute('aria-expanded', 'true')); } }));
+      window.matchMedia('(min-width: 901px)').addEventListener('change', event => { if (event.matches) close(); });
     });
   }
-
-  function createFooter() {
-    document.querySelectorAll('[data-site-footer]').forEach(host => {
-      host.innerHTML = `<div class="container footer-grid">
-        <a class="brand brand--footer" href="index.html"><span class="brand__mark">O</span><span>Orient <b>Rods</b><small>UK</small></span></a>
-        <p>${esc(site.footerNote)}</p>
-        <div class="footer-links"><a href="${categoryUrl('rods')}">Rods</a><a href="${categoryUrl('sticks')}">Throwing sticks</a><a href="contact.html">Contact</a></div>
-        <p class="footer-copy">© <span data-year></span> ${esc(site.name)}</p>
-      </div>`;
-      host.querySelector('[data-year]').textContent = new Date().getFullYear();
-    });
-  }
-
-  function renderHome() {
-    const host = document.querySelector('[data-featured-products]');
-    if (!host) return;
-    const featured = ['venus-v2-13-35lb', 'astra-10-35lb', 'iva-13-35lb'].map(slug => products.find(p => p.slug === slug));
-    host.innerHTML = featured.map(productCard).join('');
-    installImageFallbacks(host);
-  }
-
+  function createFooter() { document.querySelectorAll('[data-site-footer]').forEach(host => { host.innerHTML = `<div class="container footer-grid"><a class="brand brand--footer" href="/"><span class="brand__mark">O</span><span>Orient <b>Rods</b><small>UK</small></span></a><p class="footer-copy">© <span data-year></span> ${esc(site.name)}</p></div>`; host.querySelector('[data-year]').textContent = new Date().getFullYear(); }); }
+  function groupCard(title, intro, href, sample, number, directProduct = false, showNumber = false) { return `<a class="catalogue-group-card" href="${href}">${showNumber ? `<span class="catalogue-group-card__number">${String(number).padStart(2, '0')}</span>` : ''}${productImageMarkup(sample, 'catalogue-group-card__image')}<span class="catalogue-group-card__content"><strong>${esc(title)}</strong>${directProduct ? '' : `<small>${esc(intro)}</small>`}<em>${directProduct ? 'Explore →' : 'Explore models →'}</em></span></a>`; }
+  function renderHome() { const host = document.querySelector('[data-featured-products]'); if (!host) return; host.innerHTML = ['venus-v2-13-35lb', 'astra-10-35lb', 'iva-13-37lb'].map(slug => products.find(product => product.slug === slug)).map(productCard).join(''); installImageFallbacks(host); }
   function renderCatalogue() {
-    const category = params.get('category') === 'sticks' ? 'sticks' : 'rods';
-    const selectedGroup = category === 'rods' ? rodGroup(params.get('group')) : null;
-    const text = category === 'rods' && selectedGroup
-      ? { title: selectedGroup.title, intro: selectedGroup.intro }
-      : category === 'rods'
-      ? { title: 'Rods', intro: 'Choose a rod category, then explore every model in the range.' }
-      : { title: 'Throwing sticks', intro: 'Carbon throwing sticks designed for accurate, long-range baiting.' };
-    document.title = `${text.title} | ${site.name}`;
-    document.querySelector('[data-catalogue-title]').textContent = text.title;
-    document.querySelector('[data-catalogue-intro]').textContent = text.intro;
-    document.querySelectorAll('.catalogue-tabs a').forEach(link => link.classList.toggle('is-active', link.href.includes(`category=${category}`)));
+    const { category, group, item, child } = catalogueState(); const text = item ? { title: child && item.children?.find(entry => entry.slug === child)?.title || seriesPageName(item), intro: group.intro } : group ? { title: group.title, intro: group.intro } : category === 'sticks' ? { title: 'Throwing sticks', intro: 'Carbon throwing sticks for accurate, long-range baiting.' } : { title: 'Rods', intro: 'Explore every section of the Orient Rods range.' };
+    document.title = `${text.title} | ${site.name}`; document.querySelector('[data-catalogue-title]').textContent = text.title; document.querySelector('[data-catalogue-intro]').textContent = text.intro; const tabs = document.querySelector('.catalogue-tabs'); const isSeriesSelectionPage = category === 'rods' && Boolean(item?.children) && !child; tabs.hidden = isSeriesSelectionPage; const tabLinks = tabs.querySelectorAll('a'); tabLinks.forEach(link => link.classList.toggle('is-active', link.getAttribute('href') === categoryUrl(category))); const rodsTab = [...tabLinks].find(link => link.getAttribute('href') === categoryUrl('rods')); if (rodsTab) rodsTab.textContent = 'Rods';
     const host = document.querySelector('[data-catalogue-products]');
-    if (category === 'rods' && !selectedGroup) {
-      host.className = 'catalogue-group-grid';
-      host.innerHTML = rodGroups.map((group, index) => {
-        const sample = products.find(product => product.category === 'rods' && product.group === group.slug);
-        const count = products.filter(product => product.category === 'rods' && product.group === group.slug).length;
-        return `<a class="catalogue-group-card" href="${rodGroupUrl(group.slug)}"><span class="catalogue-group-card__number">0${index + 1}</span>${productImageMarkup(sample, 'catalogue-group-card__image')}<span class="catalogue-group-card__content"><strong>${esc(group.title)}</strong><small>${count} model${count === 1 ? '' : 's'} · ${esc(group.intro)}</small><em>Explore models →</em></span></a>`;
-      }).join('');
-    } else {
-      host.className = 'product-grid';
-      host.innerHTML = products.filter(product => product.category === category && (!selectedGroup || product.group === selectedGroup.slug)).map(productCard).join('');
-    }
+    if (category === 'rods' && !group) { host.className = 'catalogue-group-grid'; host.innerHTML = rodGroups.map((entry, index) => groupCard(entry.title, entry.intro, groupUrl(entry), products.find(product => product.group === entry.slug), index + 1)).join(''); }
+    else if (category === 'sticks') { const sticks = products.filter(product => product.category === 'sticks'); host.className = 'catalogue-group-grid catalogue-group-grid--two'; host.innerHTML = sticks.map((product, index) => groupCard(product.name, product.summary, productUrl(product), product, index + 1, true, false)).join(''); }
+    else if (category === 'rods' && group && !item) { host.className = 'catalogue-group-grid'; host.innerHTML = (series[group.slug] || []).map((entry, index) => { const matches = itemsFor(group.slug, entry); return groupCard(entry.title, entry.children ? entry.children.map(sub => sub.title).join(' · ') : `${matches.length} model${matches.length === 1 ? '' : 's'}`, itemUrl(group, entry), matches[0], index + 1, Boolean(entry.primaryProduct)); }).join(''); }
+    else if (category === 'rods' && item && item.children && !child) { host.className = 'catalogue-group-grid'; host.innerHTML = item.children.map((entry, index) => { const matches = itemsFor(group.slug, item, entry.slug); return groupCard(entry.title, `${matches.length} model${matches.length === 1 ? '' : 's'}`, childUrl(group, item, entry), matches[0], index + 1, Boolean(entry.products?.length === 1)); }).join(''); }
+    else { const list = category === 'sticks' ? products.filter(product => product.category === 'sticks') : itemsFor(group.slug, item, child); host.className = 'product-grid'; host.innerHTML = list.map(productCard).join(''); }
     installImageFallbacks(host);
   }
-
   function renderProduct() {
-    const product = products.find(item => item.slug === params.get('product')) || products[0];
+    const product = products.find(item => productPath(item) === route) || products.find(item => item.slug === params.get('product'));
+    if (!product) { document.title = `Page not found | ${site.name}`; document.querySelector('[data-product-page]').innerHTML = `<section class="container section"><p class="eyebrow">Not found</p><h1>This product page is not available.</h1><p>Please return to the Rods catalogue to explore the current range.</p><a class="button button--primary" href="${categoryUrl('rods')}">View rods</a></section>`; return; }
     document.title = `${product.name} ${product.variant} | ${site.name}`;
-    const photoSlots = [1, 2, 3].map((n, index) => `<button class="gallery-thumb ${index === 0 ? 'is-active' : ''}" type="button" data-gallery-image="${productImage(product, n)}" aria-label="Show image ${n} of ${esc(product.name)}">
-      <img src="${productImage(product, n)}" alt="" loading="lazy" /><span class="gallery-thumb__fallback"></span>
-    </button>`).join('');
-    const groupLink = product.category === 'rods' ? rodGroup(product.group) : null;
-    document.querySelector('[data-product-page]').innerHTML = `<section class="container breadcrumbs"><a href="index.html">Home</a><span>/</span><a href="${categoryUrl(product.category)}">${product.category === 'rods' ? 'Rods' : 'Throwing sticks'}</a>${groupLink ? `<span>/</span><a href="${rodGroupUrl(groupLink.slug)}">${esc(groupLink.title)}</a>` : ''}<span>/</span><span>${esc(product.name)}</span></section>
-      <section class="container product-layout">
-        <div class="product-gallery">
-          <div class="product-gallery__main" data-gallery-main>${productImageMarkup(product, 'product-gallery__image')}</div>
-          <div class="product-gallery__thumbs">${photoSlots}</div>
-        </div>
-        <article class="product-detail">
-          <p class="eyebrow">${esc(product.action)}</p>
-          <h1>${esc(product.name)}</h1>
-          <p class="product-detail__variant">${esc(product.variant)}</p>
-          <p class="product-detail__price">${esc(formatPrice(product.price))}</p>
-          <p class="product-detail__summary">${esc(product.summary)}</p>
-          <a class="button button--primary" href="contact.html?product=${encodeURIComponent(product.slug)}">Enquire about this model</a>
-          <div class="product-detail__rule"></div>
-          <h2>Specification</h2>
-          <dl class="spec-list">${product.specs.map(([label, value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join('')}</dl>
-        </article>
-      </section>
-      <section class="container section product-description"><p class="eyebrow">About this model</p><h2>Built with purpose.</h2><p>${esc(product.description)}</p></section>`;
-    const main = document.querySelector('[data-gallery-main]');
-    installImageFallbacks(main);
-    const mainImage = main.querySelector('img');
-    document.querySelectorAll('[data-gallery-image]').forEach(button => {
-      const thumbImage = button.querySelector('img');
-      thumbImage.addEventListener('error', () => button.classList.add('is-missing'), { once: true });
-      button.addEventListener('click', () => {
-        if (button.classList.contains('is-missing')) return;
-        mainImage.src = button.dataset.galleryImage;
-        main.querySelector('[data-product-image]').classList.remove('is-fallback');
-        document.querySelectorAll('[data-gallery-image]').forEach(item => item.classList.toggle('is-active', item === button));
-      });
-    });
+    const group = product.category === 'rods' && groupFor(product.group); const item = group && seriesFor(group.slug, product.series); const modelMenuLabel = item?.children?.find(entry => entry.products?.includes(product.slug))?.title || product.name; const galleryImages = Array.from({ length: product.imageCount || 3 }, (_, index) => productImage(product, index + 1)); const displayModels = availableModels(product); const modelRows = displayModels.map(model => `<li><span><b>${esc(model.label)}</b>${model.code ? `<small>Code ${esc(model.code)}</small>` : ''}</span><strong>${esc(formatPrice(model.price))}</strong></li>`).join(''); const galleryCount = `${galleryImages.length} photos`; const modelsMarkup = `<section class="product-models"><p class="eyebrow">Available models</p><ul>${modelRows}</ul></section>`; const detailMarkup = `<h1>${esc(product.name)}</h1>${modelsMarkup}`; const mobileModelsMarkup = `<section class="container product-models product-models--mobile"><p class="eyebrow">Available models</p><ul>${modelRows}</ul></section>`;
+    document.querySelector('[data-product-page]').innerHTML = `<section class="container breadcrumbs"><a href="/">Home</a><span>/</span><a href="${categoryUrl(product.category)}">${product.category === 'rods' ? 'Rods' : 'Throwing sticks'}</a>${group ? `<span>/</span><a href="${groupUrl(group)}">${esc(group.title)}</a>` : ''}${item?.children ? `<span>/</span><a href="${seriesUrl(group, item)}">${esc(seriesPageName(item))}</a>` : ''}<span>/</span><span>${esc(modelMenuLabel)}</span></section><section class="container product-layout"><div class="product-gallery"><div class="product-gallery__main" data-gallery-main role="button" tabindex="0" aria-label="Open photo gallery">${productImageMarkup(product, 'product-gallery__image')}<span class="product-gallery__count">${galleryCount} · View gallery</span></div><p class="product-gallery__hint">Click the image to open the full gallery.</p></div><article class="product-detail">${detailMarkup}</article></section>${mobileModelsMarkup}<section class="container product-description"><p class="eyebrow">About this model</p><div class="product-description__copy">${descriptionMarkup(product)}${characteristicsMarkup(product)}</div></section><div class="gallery-lightbox" data-gallery-lightbox hidden aria-hidden="true"><button class="gallery-lightbox__backdrop" type="button" data-gallery-close aria-label="Close gallery"></button><div class="gallery-lightbox__dialog" role="dialog" aria-modal="true" aria-label="${esc(product.name)} photo gallery"><button class="gallery-lightbox__close" type="button" data-gallery-close aria-label="Close gallery">×</button><button class="gallery-lightbox__previous" type="button" data-gallery-previous aria-label="Previous image">‹</button><img data-gallery-lightbox-image src="" alt="${esc(product.name)}" /><button class="gallery-lightbox__next" type="button" data-gallery-next aria-label="Next image">›</button><p data-gallery-counter></p></div></div>`;
+    const main = document.querySelector('[data-gallery-main]'); installImageFallbacks(main); const mainImage = main.querySelector('img'); const lightbox = document.querySelector('[data-gallery-lightbox]'); const lightboxImage = lightbox.querySelector('[data-gallery-lightbox-image]'); const counter = lightbox.querySelector('[data-gallery-counter]'); let activeImage = 0;
+    const setActiveImage = index => { activeImage = (index + galleryImages.length) % galleryImages.length; mainImage.src = galleryImages[activeImage]; main.querySelector('[data-product-image]').classList.remove('is-fallback'); };
+    const openLightbox = () => { if (main.querySelector('[data-product-image]').classList.contains('is-fallback')) return; lightboxImage.src = galleryImages[activeImage]; counter.textContent = `${activeImage + 1} / ${galleryImages.length}`; lightbox.hidden = false; lightbox.setAttribute('aria-hidden', 'false'); document.body.classList.add('gallery-open'); lightbox.querySelector('.gallery-lightbox__close').focus(); };
+    const closeLightbox = () => { lightbox.hidden = true; lightbox.setAttribute('aria-hidden', 'true'); document.body.classList.remove('gallery-open'); main.focus(); };
+    main.addEventListener('click', openLightbox); main.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openLightbox(); } }); lightbox.querySelectorAll('[data-gallery-close]').forEach(button => button.addEventListener('click', closeLightbox)); lightbox.querySelector('[data-gallery-previous]').addEventListener('click', () => { setActiveImage(activeImage - 1); lightboxImage.src = galleryImages[activeImage]; counter.textContent = `${activeImage + 1} / ${galleryImages.length}`; }); lightbox.querySelector('[data-gallery-next]').addEventListener('click', () => { setActiveImage(activeImage + 1); lightboxImage.src = galleryImages[activeImage]; counter.textContent = `${activeImage + 1} / ${galleryImages.length}`; }); document.addEventListener('keydown', event => { if (lightbox.hidden) return; if (event.key === 'Escape') closeLightbox(); if (event.key === 'ArrowLeft') lightbox.querySelector('[data-gallery-previous]').click(); if (event.key === 'ArrowRight') lightbox.querySelector('[data-gallery-next]').click(); });
   }
-
-  function renderContact() {
-    const product = products.find(item => item.slug === params.get('product'));
-    if (product) document.querySelector('[data-contact-subject]').textContent = `Enquire about ${product.name} ${product.variant}`;
-    const host = document.querySelector('[data-contact-details]');
-    const methods = [];
-    if (site.email) methods.push(`<a class="contact-method" href="mailto:${esc(site.email)}"><span>Email</span><strong>${esc(site.email)}</strong></a>`);
-    if (site.phone) methods.push(`<a class="contact-method" href="tel:${esc(site.phone.replace(/\s/g, ''))}"><span>Telephone</span><strong>${esc(site.phone)}</strong></a>`);
-    if (site.socialUrl) methods.push(`<a class="contact-method" href="${esc(site.socialUrl)}" target="_blank" rel="noopener"><span>Social</span><strong>Follow Orient Rods UK</strong></a>`);
-    host.innerHTML = methods.length ? methods.join('') : `<p class="contact-details__note">Contact details will appear here once they are added to <code>data/site.js</code>.</p>`;
-  }
-
-  createHeader();
-  createFooter();
-  if (document.body.dataset.page === 'home') renderHome();
-  if (document.body.dataset.page === 'catalogue') renderCatalogue();
-  if (document.body.dataset.page === 'product') renderProduct();
-  if (document.body.dataset.page === 'contact') renderContact();
+  function renderContact() { const product = products.find(item => item.slug === params.get('product')); if (product) document.querySelector('[data-contact-subject]').textContent = `Enquire about ${product.name} ${product.variant}`; const host = document.querySelector('[data-contact-details]'); const methods = []; if (site.email) methods.push(`<a class="contact-method" href="mailto:${esc(site.email)}"><span>Email</span><strong>${esc(site.email)}</strong></a>`); if (site.phone) methods.push(`<a class="contact-method" href="tel:${esc(site.phone.replace(/\s/g, ''))}"><span>Telephone</span><strong>${esc(site.phone)}</strong></a>`); if (site.socialUrl) methods.push(`<a class="contact-method" href="${esc(site.socialUrl)}" target="_blank" rel="noopener"><span>Social</span><strong>Follow Orient Rods UK</strong></a>`); host.innerHTML = methods.length ? methods.join('') : `<p class="contact-details__note">Contact details will appear here once added to <code>data/site.js</code>.</p>`; }
+  createHeader(); createFooter(); if (document.body.dataset.page === 'home') renderHome(); if (document.body.dataset.page === 'catalogue') renderCatalogue(); if (document.body.dataset.page === 'product') renderProduct(); if (document.body.dataset.page === 'contact') renderContact();
 })();

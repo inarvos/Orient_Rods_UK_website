@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://orientrodsuk.com/</loc></url>
-  <url><loc>https://orientrodsuk.com/catalogue.html?category=rods</loc></url>
-  <url><loc>https://orientrodsuk.com/catalogue.html?category=rods&amp;group=carp</loc></url>
-  <url><loc>https://orientrodsuk.com/catalogue.html?category=rods&amp;group=spod-marker</loc></url>
-  <url><loc>https://orientrodsuk.com/catalogue.html?category=rods&amp;group=feeder</loc></url>
-  <url><loc>https://orientrodsuk.com/catalogue.html?category=sticks</loc></url>
-  <url><loc>https://orientrodsuk.com/contact.html</loc></url>
+  <url><loc>https://orientrodsuk.com/rods</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/carp-fishing-rods</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/feeder-rods</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/seafishing-rods</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/casting-rods</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/carp-fishing-rods/bestia-series</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/carp-fishing-rods/venus-series</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/carp-fishing-rods/galax-series</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/carp-fishing-rods/iva-series</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/carp-fishing-rods/chameleon-series</loc></url>
+  <url><loc>https://orientrodsuk.com/rods/feeder-rods/chameleon-distance</loc></url>
+  <url><loc>https://orientrodsuk.com/v2</loc></url>
+  <url><loc>https://orientrodsuk.com/v3</loc></url>
+  <url><loc>https://orientrodsuk.com/astra</loc></url>
+  <url><loc>https://orientrodsuk.com/bestia-vc</loc></url>
+  <url><loc>https://orientrodsuk.com/bestia-pp</loc></url>
+  <url><loc>https://orientrodsuk.com/vektra</loc></url>
+  <url><loc>https://orientrodsuk.com/galax</loc></url>
+  <url><loc>https://orientrodsuk.com/galax-sd</loc></url>
+  <url><loc>https://orientrodsuk.com/iva-37</loc></url>
+  <url><loc>https://orientrodsuk.com/inventa</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-ultimate</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-s1-s2</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-sm</loc></url>
+  <url><loc>https://orientrodsuk.com/distance</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-ultimate-feeder</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-distance-feeder</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-distance-d2</loc></url>
+  <url><loc>https://orientrodsuk.com/chameleon-fx</loc></url>
+  <url><loc>https://orientrodsuk.com/amphitrite</loc></url>
+  <url><loc>https://orientrodsuk.com/bestia-casting</loc></url>
+  <url><loc>https://orientrodsuk.com/throwing-sticks</loc></url>
+  <url><loc>https://orientrodsuk.com/bombus</loc></url>
+  <url><loc>https://orientrodsuk.com/anacondas</loc></url>
+  <url><loc>https://orientrodsuk.com/contact</loc></url>
 </urlset>

@@ -5,10 +5,12 @@ A static website designed for Hostinger Single Web Hosting. It uses only HTML, C
 ## What is included
 
 - Responsive home, Rods, Throwing Sticks, product and Contact pages
-- Desktop and mobile navigation with product sub-menus
+- Screenshot-matched Rods navigation: Carp, Feeder, Seafishing and Casting sections
+- Desktop and mobile navigation with all product sub-menus
 - One product data file for descriptions, specifications and prices
 - Product galleries populated with selected product photography from the supplied archive
 - Basic SEO files: `robots.txt`, `sitemap.xml` and a favicon
+- Clean Hostinger URLs, including `/rods`, `/v2`, `/bestia-casting` and `/contact`
 
 ## Update a price or description
 
@@ -46,8 +48,14 @@ Only filled-in contact methods appear on the Contact page.
 1. In Hostinger, open **Websites** → **Manage** → **File Manager**.
 2. Open `public_html`.
 3. Remove the default Hostinger page files only after keeping a copy if you want one.
-4. Upload the **contents** of this folder into `public_html`. Do not upload the enclosing `orient-rods-uk` folder itself.
-5. Visit your domain and test the home page, menu, Rods, Throwing Sticks and a product page on a phone.
+4. Upload the **contents** of this folder into `public_html`, including the hidden `.htaccess` file. Do not upload the enclosing `orient-rods-uk` folder itself.
+5. Visit `/rods`, `/v2`, `/bestia-casting` and `/contact` to confirm that clean links work.
+6. Test the menu, Rods, Throwing Sticks and a product page on a phone.
+
+The package includes versioned CSS/JavaScript links and cache-revalidation
+headers in `.htaccess`, so overwritten pages should appear immediately after a
+new upload. If Hostinger CDN caching is enabled separately in hPanel, purge that
+cache once after replacing the files.
 
 ## Put it on GitHub
 
