@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://orientrodsuk.com/sitemap.xml

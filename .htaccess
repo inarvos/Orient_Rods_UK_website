@@ -1,8 +1,8 @@
 Options -MultiViews
 RewriteEngine On
 
-# Always revalidate pages and front-end files after an upload.  The versioned
-# asset URLs in the HTML provide an additional cache break for browsers/CDNs.
+# Revalidate pages and front-end files after an upload so browsers do not keep
+# an older logo or layout. Versioned asset URLs provide a second cache break.
 <IfModule mod_headers.c>
   <FilesMatch "\.(html?|css|js|json)$">
     Header always set Cache-Control "no-cache, no-store, must-revalidate, max-age=0"
@@ -24,10 +24,15 @@ RewriteCond %{REQUEST_FILENAME} !-d
 # Clean catalogue pages.
 RewriteRule ^rods/?$ catalogue.html?route=rods [L,QSA]
 
+# Withdrawn feeder Distance products and their old series URLs return to the current feeder range.
+RewriteRule ^(?:chameleon-distance-feeder|chameleon-distance-d2|chameleon-distance-feeder-14-35oz|chameleon-distance-d2-14-36oz)/?$ /rods/feeder-rods [R=301,L]
+RewriteRule ^rods/feeder-rods/chameleon-distance(?:/.*)?/?$ /rods/feeder-rods [R=301,L]
+
 # Series that have one primary model redirect to their canonical product URL.
 RewriteRule ^rods/carp-fishing-rods/astra-series/?$ /astra [R=301,L]
 RewriteRule ^rods/carp-fishing-rods/vektra/?$ /vektra [R=301,L]
 RewriteRule ^rods/carp-fishing-rods/inventa/?$ /inventa [R=301,L]
+RewriteRule ^rods/carp-fishing-rods/iva-series/?$ /iva-37 [R=301,L]
 RewriteRule ^rods/carp-fishing-rods/distance/?$ /distance [R=301,L]
 RewriteRule ^rods/feeder-rods/chameleon-ultimate/?$ /chameleon-ultimate-feeder [R=301,L]
 RewriteRule ^rods/feeder-rods/chameleon-fx/?$ /chameleon-fx [R=301,L]
@@ -45,8 +50,6 @@ RewriteRule ^rods/carp-fishing-rods/iva-series/37lb/?$ /iva-37 [R=301,L]
 RewriteRule ^rods/carp-fishing-rods/chameleon-series/ultimate/?$ /chameleon-ultimate [R=301,L]
 RewriteRule ^rods/carp-fishing-rods/chameleon-series/s1-s2/?$ /chameleon-s1-s2 [R=301,L]
 RewriteRule ^rods/carp-fishing-rods/chameleon-series/sm/?$ /chameleon-sm [R=301,L]
-RewriteRule ^rods/feeder-rods/chameleon-distance/distance-feeder/?$ /chameleon-distance-feeder [R=301,L]
-RewriteRule ^rods/feeder-rods/chameleon-distance/distance-d2/?$ /chameleon-distance-d2 [R=301,L]
 RewriteRule ^rods/(.+)/?$ catalogue.html?route=rods/$1 [L,QSA]
 RewriteRule ^throwing-sticks/?$ catalogue.html?route=throwing-sticks [L,QSA]
 RewriteRule ^contact/?$ contact.html [L,QSA]

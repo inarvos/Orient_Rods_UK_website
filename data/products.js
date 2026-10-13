@@ -11,10 +11,40 @@ window.ORIENT_PRODUCTS = [
     name: "Venus V2",
     variant: "13' 3.5lb",
     price: "£350.00",
-    code: "VNS1335C",
+    models: [{ label: "Venus V2 13' 3.5lb", code: "VNS1335C", price: "£350.00" }],
+    imageCount: 10,
+    imageVersion: "v2-20261011-1",
+    imageAlts: [
+      "Venus V2 carbon reel seat and first guide",
+      "Venus V2 two-piece rod and tip section",
+      "Venus V2 reel seat and carbon blank detail",
+      "Venus V2 first guide close-up",
+      "Venus V2 SIC guide insert and frame detail",
+      "Venus V2 guide sequence and tip section",
+      "Venus V2 butt cap and section joint",
+      "Venus V2 handle and butt section",
+      "Venus V2 rod sections in the protective sleeve",
+      "Venus V2 protective rod sleeve"
+    ],
     action: "Butt Drive",
     summary: "A long-range sports rod with a powerful Butt Section and a highly responsive tip.",
-    description: "BUTT DRIVE CONCEPT - in contrast to the Top Drive, has a more powerful Butt Section.\n\nThis rod designed primarily for sporting challenges, will work with a wide range of leads (120 - 140 grams) and at very long distances!",
+    // Original manufacturer's wording, verified 11 October 2026.
+    description: "",
+    characteristicsGap: true,
+    characteristics: [
+      "BUTT DRIVE CONCEPT - in contrast to the Top Drive, has a more powerful Butt Section;",
+      "Unique patented blank design (WIPO Global Design Database DM/090 372) fir-tree;",
+      "The blank is made using the most high - modulus Japanese Toray carbon fiber materials available on the market today 55-66msi (40T+46T);",
+      "To protect the blank and to add some extra strength and rigidity, we applied a special carbon fiber Twill finish 1,5K;",
+      "Full Stainless Steel, impact resistant S-KL type 50mm guides with SIC inserts! The advantage of using such the guides is that we can use the latest generations of extremely thin braided and monofilament lines. Also they reduce a possibility of formation of any knots and an overlapping effect.",
+      "Using a new state of the art Two Side Imprgenation technology, we can get a best possible quality Prepreg - flexible and in the same time very strong!",
+      "Orient carbon reel seats with original Fuji components;",
+      "This rod designed primarily for sporting challenges, will work with a wide range of leads (120 - 140 grams) and at very long distances!",
+      "Weight 420 gr;",
+      "Casting weight range up to 130g;",
+      "Casting Distance: 200+ m."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "50mm S-KL SIC, K-series single-foot"], ["Weight", "420g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m+"], ["Reel seat", "Orient carbon with Fuji components"]]
   },
   {
@@ -23,12 +53,59 @@ window.ORIENT_PRODUCTS = [
     group: "carp",
     series: "astra",
     name: "Astra",
-    variant: "10' 3.5lb — Fuji reel seat",
-    price: "£180.00",
-    models: [{ label: "Astra 10' 3.5lb — FUJI", code: "AST1035BF", price: "£180.00" }, { label: "Astra 10' 3.5lb — OR", code: "AST1035BC", price: "£190.00" }, { label: "Astra 10' 3.5lb — ALPS", code: "AST1035GA", price: "£200.00" }],
+    variant: "10' 3.5lb — FUJI, OR and ALPS reel seats",
+    price: "From £210.00",
+    // Official option amounts confirmed by the owner on 9 October 2026.
+    // Display the same numeric amounts with £, without currency conversion.
+    models: [
+      { label: "Astra 10' 3.5lb (FUJI)", code: "AST1035BF", price: "£230.00" },
+      { label: "Astra 10' 3.5lb (OR)", code: "AST1035BC", price: "£210.00" },
+      { label: "Astra 10' 3.5lb (ALPS)", code: "AST1035GA", price: "£250.00" }
+    ],
+    imageCount: 19,
+    imageVersion: "astra-20261011-3",
+    imageAlts: [
+      "Astra 10' 3.5lb with ALPS, FUJI and OR reel-seat options",
+      "Close-up comparison of the Astra ALPS, OR and FUJI reel seats",
+      "Astra rod handles and titanium butt cap",
+      "Astra rod sections and K-series guides",
+      "Astra OR and ALPS reel-seat comparison",
+      "Astra ALPS reel seat and first guide",
+      "Astra OR reel seat and first guide",
+      "Astra FUJI reel seat and first guide",
+      "Astra ALPS, OR and FUJI rod sections",
+      "Astra two-piece rod with its reel seat and guides",
+      "Astra two-piece rod and tip section",
+      "Astra rod sections with the OR reel-seat option",
+      "Astra K-series tip guide close-up",
+      "Astra tip guide and carbon blank detail",
+      "Astra hand-polished titanium butt cap",
+      "Astra first guide and carbon blank",
+      "Astra FUJI reel seat close-up",
+      "Astra rod sections in the protective sleeve",
+      "Astra protective rod sleeve"
+    ],
     action: "Butt Drive",
     summary: "A compact, light and genuinely powerful rod for bankside, stalking and boat work.",
-    description: "A tiny dot in a starry sky – A huge powerful star in reality!\n\nSo the Astra, in spite of its apparent tininess, is a very powerful tool for a wide range of tasks.\n\nBUTT DRIVE CONCEPT - in contrast to the Top Drive, has a more powerful Butt Section;\n\nUnique patented blank design (Fir-Tree).\n\nMaterial: Toray 40 + 46T (55-66msi). Finish plain 1K coating. Blank Protection with two component varnish 2K.\n\nK-series Guides: 30mm - 25mm - 20mm - 15mm - 12mm - 12mm. Reel seat: FUJI DNPSD 16.\n\nOriginal design solid-machined and hand polished Butt Cap made of Aviation Certified Titanium, provides an exclusive look, good scratch resistance and absolute corrosion resistance. The specially designed form of the Titanium Butt Cap allows you to securely fix the rod with a shackle or in another way, when fishing in a snag with a tight friction clutch or at great depths near the coastline.\n\nThe rod can be used both for regular fishing from the bank and in difficult coastal conditions (stalking), as well as for fishing from the surface and boat fishing. With its small transport dimensions, light weight and great throwing potential, the rod can be called universal in full measure.\n\nThe weight of the rod is only 242g. Casting weight range - up to 100g. Casting Distance: 150+ m.",
+    description: "A tiny dot in a starry sky – A huge powerful star in reality!\n\nSo the Astra, in spite of its apparent tininess, is a very powerful tool for a wide range of tasks.",
+    characteristicsGap: true,
+    orderEmail: "uk.orientrods@gmail.com",
+    characteristics: [
+      "BUTT DRIVE CONCEPT - in contrast to the Top Drive, has a more powerful Butt Section.",
+      "Unique patented blank design (Fir-Tree).",
+      "Material: Toray 40 + 46T (55-66msi).",
+      "Finish plain 1K coating.",
+      "Blank Protection with two component varnish 2K.",
+      "K-series Guides: 30mm - 25mm - 20mm - 15mm - 12mm - 12mm.",
+      "Reel seat: FUJI DNPSD 16.",
+      "Original design solid-machined and hand polished Butt Cap made of Aviation Certified Titanium, provides an exclusive look, good scratch resistance and absolute corrosion resistance.",
+      "The specially designed form of the Titanium Butt Cap allows you to securely fix the rod with a shackle or in another way, when fishing in a snag with a tight friction clutch or at great depths near the coastline.",
+      "The rod can be used both for regular fishing from the bank and in difficult coastal conditions (stalking), as well as for fishing from the surface and boat fishing.",
+      "With its small transport dimensions, light weight and great throwing potential, the rod can be called universal in full measure.",
+      "The weight of the rod is only 242g.",
+      "Casting weight range - up to 100g.",
+      "Casting Distance: 150+ m."
+    ],
     specs: [["Blank", "Toray 40T + 46T"], ["Guides", "K-series 30–12mm"], ["Weight", "242g"], ["Casting weight", "Up to 100g"], ["Casting distance", "150m+"], ["Reel seat", "Fuji DNPSD 16"]]
   },
   {
@@ -39,10 +116,39 @@ window.ORIENT_PRODUCTS = [
     name: "Galax",
     variant: "13' 3.5lb",
     price: "£220.00",
-    code: "CLX1335",
+    models: [{ label: "Galax 13' 3.5lb", code: "CLX1335", price: "£220.00" }],
+    imageCount: 9,
+    imageVersion: "galax-20261012-1",
+    imageExtensions: { 2: "png", 3: "png", 4: "png", 5: "png", 6: "png", 7: "png", 8: "png", 9: "png" },
+    imageAlts: [
+      "Galax reel seat and rod sections with the model name",
+      "Galax butt and tip sections with the first guide",
+      "Galax complete butt and tip sections with the Orient Rods label",
+      "Galax protective sleeve with the model label",
+      "Galax rod sections in the protective sleeve",
+      "Galax Fuji reel seat close-up",
+      "Galax reel-seat label and tip section",
+      "Galax handle, butt cap and section joint",
+      "Galax guides and rod sections in the open protective sleeve"
+    ],
     action: "Top Drive",
     summary: "A long-range platform with a powerful tip and a softer butt for an efficient casting arc.",
-    description: "TOP DRIVE CONCEPT - as opposed to the Butt Drive, has a more powerful Top Section and a softer Butt Section. In this rod constructively increased power (stiffness + strength) of the Tip Section and we designed a bit softer Butt Section. This makes it possible to effectively do long casts in a shorter arc and with different overhangs.\n\nThe structural feature of the Butt Section is to give the maximum initial acceleration to the Tip Section (like the work of a whip), and to quickly stabilize it after casting.",
+    // The manufacturer's full description is a ten-item list; checked 12 October 2026.
+    description: "",
+    characteristicsGap: true,
+    characteristics: [
+      "TOP DRIVE CONCEPT - as opposed to the Butt Drive, has a more powerful Top Section and a softer Butt Section. In this rod constructively increased power (stiffness + strength) of the Tip Section and we designed a bit softer Butt Section. This makes it possible to effectively do long casts in a shorter arc and with different overhangs. The structural feature of the Butt Section is to give the maximum initial acceleration to the Tip Section (like the work of a whip), and to quickly stabilize it after casting;",
+      "Unique patented blank design (WIPO Global Design Database DM/090 372) fir-tree;",
+      "Material: Toray Japan (30T+40T);",
+      "Reel seat: FUJI;",
+      "The Butt Cap: anodized aviation aluminum 6061 with laser engraved logo;",
+      "Guides TLTSG Taiwan. Insert material - Zirconium Oxide (ZrO2). First Guide 50 mm;",
+      "K- series Tip Guide;",
+      "Weight 420g;",
+      "Casting weight range up to 125g;",
+      "Casting Distance: 200m."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 30T + 40T"], ["Guides", "50mm TLTSG ZrO2, K-series tip"], ["Weight", "420g"], ["Casting weight", "Up to 125g"], ["Casting distance", "200m"], ["Reel seat", "Fuji"]]
   },
   {
@@ -66,10 +172,41 @@ window.ORIENT_PRODUCTS = [
     name: "IVA Limited Edition",
     variant: "13' 3.7lb",
     price: "£550.00",
-    code: "IVA1337",
+    models: [{ label: "Iva 13' 3.7lb", code: "IVA1337", price: "£550.00" }],
+    imageCount: 10,
+    imageVersion: "iva-20261011-1",
+    imageAlts: [
+      "Iva 13' 3.7lb reel-seat comparison",
+      "Iva 13' 3.7lb two-piece rod and tip section",
+      "Iva 13' 3.7lb rod sections shown in reverse orientation",
+      "Iva 13' 3.7lb assembled rod",
+      "Iva titanium-carbon butt cap and section joint",
+      "Iva carbon reel seat, handle and first guide",
+      "Iva engraved carbon reel seat close-up",
+      "Iva FUJI K-series tip guide close-up",
+      "Iva rod sections inside the protective sleeve",
+      "Iva protective rod sleeve"
+    ],
     action: "Top Drive",
     summary: "A stiffer limited-edition IVA with an exclusive Four Cross Carbon finish.",
-    description: "The rod IVA 13' 3,7lb is made on the basis of the standard IVA 3,5lb blank with a slight increase in stiffness up to a test of 3,7lb and has an exclusive final Japanese Toray high performance graphite cover - Four cross carbon. This is a technological and chic coating, and you are unlikely to find a rod completely covered with it, this is a real exclusive!\n\nAccording to its characteristics, the rod belongs to the TOP DRIVE - Orient Rods classifier. It uses five guides (5G patented system), FUJI K-series anti-lapping rings and a Titanium butt cap with carbon insert.",
+    // Original manufacturer's English wording, checked 11 October 2026.
+    description: "We are proud to introduce a limited rod Iva 13 3,7lb\n\nThe rod Iva 13 3,7lb is made on the basis of Iva 3.5lb series blank with slightly increased stiffness up to casting weight range of 3.7lb. It has an exclusive Japanese Toray high performance graphite four cross carbon finish, which is rather complex and beautiful at the same time. This finish is very technological and elegant and you are unlikely to find any other rod completely covered with it, because it is really exclusive!",
+    characteristicsTitle: "Additional specifications:",
+    characteristicsGap: true,
+    characteristics: [
+      "TOP DRIVE rod design according to Orient Rods classifier;",
+      "The rod blank has a patented fir-tree design (WIPO Global Design Database DM/090 372);",
+      "5 guide rings are used (patented 5G system);",
+      "FUJI K series anti overlap guide rings. SIC insert. 30 mm Input Ring;",
+      "Blank material: Toray Japan 55-66 msi (40Т + 46Т);",
+      "Reel seat: ORIENT - FUJI with special engraving on the carbon bushing;",
+      "Handle covered with a carbon finish coating;",
+      "Butt cap: titanium with carbon insert;",
+      "Weight 362 g;",
+      "Casting loads range up to 130 g;",
+      "Casting distance up to 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G Fuji K-series SIC, 30mm first guide"], ["Weight", "362g"], ["Casting weight", "Up to 130g"], ["Casting distance", "200m+"], ["Butt cap", "Titanium with carbon insert"]]
   },
   {
@@ -80,9 +217,38 @@ window.ORIENT_PRODUCTS = [
     name: "Chameleon Ultimate",
     variant: "13' 3–6oz",
     price: "£380.00",
+    models: [{ label: "Chameleon Ultimate 13' 3–6oz", code: "CHU1336", price: "£380.00" }],
+    imageCount: 8,
+    imageVersion: "chameleon-ultimate-20261011-1",
+    imageAlts: [
+      "Chameleon Ultimate reel seat and engraved carbon bushing",
+      "Chameleon Ultimate reel seat and first guide",
+      "Chameleon Ultimate two-piece rod and tip section",
+      "Chameleon Ultimate Kevlar-carbon handle and section joint",
+      "Chameleon Ultimate reel seat close-up",
+      "Chameleon Ultimate five-guide layout",
+      "Chameleon Ultimate spiral-wrapped handle and butt section",
+      "Chameleon Ultimate rod sections inside the protective sleeve"
+    ],
     action: "Butt Drive",
     summary: "A light but powerful multi-purpose rod for extreme fishing, spod and marker work.",
-    description: "The rod blank is made of high-modulus carbon fiber and prepreg with a minimum content of resins and is covered with a finish coating with a Slit Carbon Toray spiral winding. The taper, wall thickness and material for a more uniform distribution and stress relief using five guides (5G) were very carefully selected in the design of the blank (fir-tree). This made it possible to achieve the best throwing characteristics.\n\nThe use of innovative materials and technologies in the manufacture of rods allowed to make it very light (385 grams) and with a real test up to 6 oz. The rod with such characteristics of the blank could be used as a universal (Ultimate). You get a light and powerful fishing rod with an extended range of effective operation of the blank. It can be used as a spod rod, marker and working for extreme fishing challenges.",
+    // Original manufacturer's English wording, checked 11 October 2026.
+    description: "The rod Chameleon Ultimate 13' 3-6oz\n\nThe rod blank is made of high-modulus carbon fiber and prepreg with minimal resin content and is coated with finish of Slit Carbon Toray spiral wrapping.\n\nWe have selected conicity, wall thickness and material very carefully according to the design of the blank in order to achieve even more stress distribution and relief using five guide rings (5G). As a result we achieved better casting performance.\n\nThe use of innovative materials and technologies in the process of manufacture made it possible to produce very light rods (385 grams) with real casting weight range up to 6 oz. The rod with such blank performance characteristics can be used as universal one (Ultimate). You get a lightweight and powerful rod with an extended range of effective blank action. You can use it as a spod rod, marker rod or the workhorse for difficult fishing conditions. The grip is a combination of practicality and aesthetics: it is made of Kevlar/carbon with spiral wrapping to reduce hand slip. The carbon bushing with engraving of Chameleon completes the stunning design of the rod.",
+    characteristicsTitle: "General properties:",
+    characteristicsGap: true,
+    characteristics: [
+      "Fir-Tree blank design (WIPO patented);",
+      "\"REAR DRIVE\" rod design according to Orient Rods classifier;",
+      "Blank material by Toray Japan 55-66 msi (40Т+46Т);",
+      "Slit Carbon Toray reinforcing finish carbon coating has been applied in order to add rigidity and strength;",
+      "5 guide rings are used (patented 5G system);",
+      "Guide rings of K-series;",
+      "The reel seat Orient - Fuji with branded engraving on the carbon bushing;",
+      "Grip finishing with Kevlar / Carbon;",
+      "The weight of the rod is 385 grams;",
+      "Casting distance is 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "5G K-series"], ["Weight", "385g"], ["Casting range", "Up to 6oz"], ["Casting distance", "200m+"], ["Handle", "Kevlar-carbon spiral finish"]]
   },
   {
@@ -149,9 +315,37 @@ window.ORIENT_PRODUCTS = [
     name: "Venus V3",
     variant: "13' 3–5oz",
     price: "£420.00",
+    models: [{ label: "Venus V-3 13' 3–5oz", price: "£420.00" }],
+    imageCount: 8,
+    imageVersion: "v3-20261011-1",
+    imageAlts: [
+      "Venus V3 Fuji reel seat and carbon blank",
+      "Venus V3 two-piece rod and tip section",
+      "Venus V3 titanium-carbon butt cap and section joint",
+      "Venus V3 carbon handle and butt section",
+      "Venus V3 ALPS first guide",
+      "Venus V3 ALPS guides and tip section",
+      "Venus V3 rod sections beside the protective sleeve",
+      "Venus V3 rod sections inside the protective sleeve"
+    ],
     action: "Butt Drive",
     summary: "A reinforced Venus for headwinds, PVA work and high-load casting.",
-    description: "V-3 is a reinforced version of V-2, and this rod can be called casting for work with large loads in the full sense (headwind, work with large PVA sticks and heavy loads). The efficiency of its impact with a certain effort is 20% higher than in other models.\n\nThis became possible due to the addition of transverse prepreg to the longitudinal fibers at a certain angle, which allowed to obtain the extra rigidity and strength like a multilayer reinforced bow. Finish coating with a higher modulus of the fiber's elasticity is also used. Thanks to these changes, the blank diameter reducing became possible, making the rod more elegant, without loss of strength.",
+    // Original manufacturer's wording and paragraph order.
+    description: "You will submit to any horizons!\n\nIntroducing the new carp fishing rod Venus V-3 13' 3-5oz.\n\nV-3 is a reinforced version of V-2 and this rod can be called casting for work with large loads in the full sense (headwind, work with large PVA sticks and heavy loads).\n\nThe efficiency of its impact with a certain effort is 20% higher than in other models.\n\nThis became possible due to the addition of transverse prepreg to the longitudinal fibers at a certain angle, which allowed to obtain the extra rigidity and strength like a multilayer reinforced bow. Finish coating with a higher modulus of the fiber's elasticity is also used. Thanks to these changes, the blank diameter reducing became possible making the rod more elegant, without loss of strength.\n\nThe novelty in design the butt cap made of titanium and carbon developed by our company became a real highlight of the rod. As well as in our flagship Iva rod, the handle is made using a carbon stocking. The lightweight ALPS series guides installed on the rod, their narrow frames minimally affect the structure and curve of the blank bending.\n\nFive guides (5G) could be used on this blank.",
+    characteristicsTitle: "General characteristics:",
+    characteristicsGap: true,
+    characteristics: [
+      "Fir-tree blank design (WIPO patent);",
+      "Butt Drive rod system – Orient Rods classifier;",
+      "Blank material Toray Japan 55-66 msi (40T+46T);",
+      "The reinforcing finish carbon coating 1K Plain is applied to add some extra strength and rigidity;",
+      "The ALPS series guides (S6-GSHRZG);",
+      "Reel seat Fuji Japan;",
+      "Combined Orient Butt Cup, material titanium-carbon;",
+      "The weight of the rod is 405 grams;",
+      "Casting distance is 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "ALPS S6-GSHRZG"], ["Weight", "405g"], ["Casting distance", "200m+"], ["Action", "Butt Drive"], ["Butt cap", "Titanium-carbon Orient design"]]
   },
   {
@@ -162,10 +356,39 @@ window.ORIENT_PRODUCTS = [
     name: "Chameleon SM",
     variant: "13' 5.0lb Spod / Marker",
     price: "£350.00",
-    action: "Butt Drive",
+    models: [{ label: "Chameleon SM 13' 5.0lb (Design 2025)", code: "CHSM1350", price: "£350.00" }],
+    imageCount: 9,
+    imageVersion: "chameleon-sm-20261011-1",
+    imageAlts: [
+      "Chameleon SM rod, reel seat and first guide",
+      "Chameleon SM K-series guide arrangement",
+      "Chameleon SM two-piece rod and tip section",
+      "Chameleon SM butt cap and section joint",
+      "Chameleon SM reel seat and engraved blank close-up",
+      "Chameleon SM Kevlar reel-seat insert and first guide",
+      "Chameleon SM engraved titanium butt cap",
+      "Chameleon SM rod sections inside the protective sleeve",
+      "Chameleon SM assembled rod"
+    ],
+    action: "Top Drive",
     summary: "A dedicated long-range spod and marker rod with a lighter, sustained casting feel.",
-    description: "We designed and manufactured this rod as a “front-wheel drive” in our rod classifier. The main structural difference from the Chameleon Ultimate 13' 3-6oz rod is that we reduced the stiffness of the bottom of the rod and added sufficient blank strength so that it could cope with the loads when working with large bait rockets and it was most comfortable to cast for a long time.\n\nThe rod was developed with the support of our partner in Austria for the Austrian and German markets. It has a fairly light weight of 397 grams and allows you to work with a weight of up to 200 grams. To add elegance, we added a Kevlar clamping sleeve and an exclusive butt cap with signature engravings.",
-    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series"], ["Weight", "397g"], ["Casting weight", "Up to 200g"], ["Casting distance", "200m+"], ["Reel seat", "Fuji TVSTJK 17 with Kevlar insert"]]
+    // Original manufacturer's English wording and line breaks.
+    description: "The rod Chameleon SM (spod/marker) 13' 5,0lb\n\nThe rod was developed with the support of our partner in Austria for the Austrian and German markets.\nWe have designed and manufactured this rod as a \"front drive\" rod in our rod classifier, so that fishermen can work as comfortably and efficiently as possible for long periods of time.\nDuring long-term use in various conditions, this rod has shown itself to be an excellent long-range marker with high sensitivity and a light spod for medium and small bait rockets/spombs; it can also be used as a working rod for long casts. As a result, we got a universal rod for long casting with a load of up to 150 grams\nFor added elegance, we added a Kevlar clamp sleeve and an exclusive butt cap with signature engravings.",
+    preserveDescriptionLineBreaks: true,
+    characteristicsTitle: "General properties:",
+    characteristicsGap: true,
+    characteristics: [
+      "Fir-Tree blank design (WIPO patented);",
+      "\"FRONT DRIVE\" rod design according to Orient Rods classifier;",
+      "Blank material by Toray Japan 55-66 msi (40Т+46Т);",
+      "Slit Carbon Toray reinforcing finish carbon coating has been applied in order to add rigidity and strength;",
+      "Guide rings of K-series;",
+      "The reel seat Fuji TVSTJK 17 with Kevlar insert;",
+      "The weight of the rod is 397 grams;",
+      "Casting distance is 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
+    specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series"], ["Weight", "397g"], ["Casting weight", "Up to 150g"], ["Casting distance", "200m+"], ["Reel seat", "Fuji TVSTJK 17 with Kevlar insert"]]
   },
   {
     slug: "vektra-vt1-13-35lb",
@@ -173,12 +396,41 @@ window.ORIENT_PRODUCTS = [
     group: "carp",
     series: "vektra",
     name: "VekTra",
-    variant: "13' 3.5lb",
+    variant: "12' and 13' 3.5lb",
     price: "£380.00",
-    models: [{ label: "VekTra 12' 3.5lb", code: "VT1235", price: "£380.00" }, { label: "VekTra 13' 3.5lb", code: "VT1335", price: "£380.00" }],
+    models: [
+      { label: "VekTra VT-1 12' 3.5lb", code: "VT1235", price: "£380.00" },
+      { label: "VekTra VT-1 13' 3.5lb", code: "VT1335", price: "£380.00" }
+    ],
+    imageCount: 7,
+    imageVersion: "vektra-20261012-1",
+    imageAlts: [
+      "VekTra reel seat and rod sections with the pink model name",
+      "VekTra reel seat and ALPS first guide",
+      "VekTra two-piece rod and tip section",
+      "VekTra ALPS tip guide and section joint",
+      "VekTra titanium butt cap and section joint",
+      "VekTra rod sections in the protective sleeve",
+      "VekTra rod handle and length detail"
+    ],
     action: "Full Drive",
     summary: "A thin-blank long-range rod built around synchronized butt and tip release.",
-    description: "The name itself reflects the peculiarity of this rod. A real “transformation” of changes in the technological cycle of blank production was made. We reduced the diameter of the blank and at the same time, having put sufficient rigidity into it, we achieved that this rod could be classified as a long-range.\n\nThe blank work of this rod can be attributed to all-wheel drive. In it, the load is evenly distributed at the first stage of casting and the butt and whip are triggered as synchronously as possible, releasing the accumulated energy in the second stage of casting. The stabilization of the blank after unloading is minimal for such a thin blank. You will be very comfortable to cast with such a rod, applying less effort, and get real pleasure from the aesthetic look and when playing fish.",
+    // Original manufacturer's wording and paragraph order.
+    description: "We are proud to introduce our latest product in 2020-2021: this is a carp fishing rod VekTra VT-1 13' 3,5 lb.\n\nA unique feature of the rod is reflected in its title. We have done real transformation changes in the technological cycle of blank production. We have reduced the diameter of the blank though keeping it tough enough to consider it a carp rod for long distance casting. We didn't thicken the blank walls or increase the modularity of the material, we didn't use the guide rings on several wide supports, we just made the most effective combination of materials and operations at different stages of the blank production process, making the tube more rigid. The operation of the blank can be compared to an all-wheel drive (full drive). The load is evenly distributed at the first stage of casting, both shank and whip are triggered as synchronously as possible, releasing the accumulated energy in the second stage of casting. Stabilization after releasing the load is minimal for such a thin blank.\n\nCasting such a rod is very convenient, you make less effort and get real pleasure from its aesthetic look while subduing fish.",
+    characteristicsTitle: "General properties:",
+    characteristicsGap: true,
+    characteristics: [
+      "Fir-Tree blank design (WIPO patented);",
+      "\"FULL DRIVE\" rod design according to Orient Rods classifier;",
+      "Blank material by Toray Japan 55-66 msi (40Т+46Т);",
+      "1K Plain reinforcing finish carbon coating has been applied in order to add rigidity and strength;",
+      "Guide rings ALPS (S6-GSHRZG);",
+      "The reel seat Orient - Fuji with carbon bushing 1К Plain;",
+      "The Orient Rods butt cup with branded engraving on titanium surface;",
+      "The weight of the rod is 380 grams;",
+      "Casting distance is 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "ALPS S6-GSHRZG"], ["Weight", "380g"], ["Casting distance", "200m+"], ["Action", "Full Drive"], ["Reel seat", "Orient-Fuji with 1K carbon bushing"]]
   },
   {
@@ -187,12 +439,49 @@ window.ORIENT_PRODUCTS = [
     group: "feeder",
     series: "chameleon-feeder",
     name: "Chameleon Ultimate Feeder",
-    variant: "14' 150g",
-    price: "£360.00",
-    code: "CHFU150",
+    variant: "14' up to 150g / 200g",
+    price: "From £360.00",
+    models: [
+      { label: "Chameleon Ultimate Feeder 14ft up to 150g", code: "CHFU150", price: "£360.00" },
+      { label: "Chameleon Ultimate Feeder 14ft up to 200g", price: "£400.00" }
+    ],
+    imageCount: 13,
+    imageVersion: "chameleon-feeder-20261012-1",
+    imageExtensions: { 2: "png", 11: "png" },
+    imageAlts: [
+      "Chameleon Feeder reel seat, rod sections and quiver tips with the model name",
+      "Chameleon Feeder complete rod and four separate quiver tips",
+      "Chameleon Feeder rod sections, guides and protected quiver tips",
+      "Chameleon Feeder guide arrangement and four coloured quiver tips",
+      "Chameleon Feeder cork handle and rod sections packed together",
+      "Chameleon Feeder cork handle and engraved titanium butt cap",
+      "Chameleon Feeder rod sections in the protective case",
+      "Chameleon Feeder cork handle with the 575 mm length diagram",
+      "Chameleon Feeder case pocket with the protected quiver tips",
+      "Chameleon Feeder closed protective rod case",
+      "Chameleon Feeder full-length rod beside the four quiver tips",
+      "Chameleon Feeder handle with the 575 mm length diagram",
+      "Chameleon Feeder blank labels and four coloured quiver tips"
+    ],
     action: "Ultimate feeder",
     summary: "A long-range feeder rod with four quiver tips and a detailed Kevlar finish.",
-    description: "We have released an almost classic feeder rod with Fir-Tree blank design and extended functionality (Ultimate) for long distance casts. We have increased the diameter of the first guide ring and pushed it forward as much as possible; equipped other pieces with single-leg guides and reduced the number of rings on quiver tips: all this made it possible to use carp reels with high-capacity spools and the least risk of overlaps.\n\nIn the set, there are four quiver tips of 2, 3, 4 and 6 ounces, all with guide rings of size 5. Moreover, you can buy a reinforced quiver tip in order to reach even longer distances, it will add a 10% range to your cast. The insert on the grip and the reel seat bushing are made of Kevlar: this is a highlight of the design of our feeder rod, which emphasizes that this model relates to Chameleon series.",
+    // Full English manufacturer wording and both USD model prices, checked 12 October 2026.
+    description: "We are proud to introduce our latest product in 2020-2021: this is a feeder rod Orient rods Chameleon Ultimate Feeder 14' 150 gr.\n\nWe have released an almost classic feeder rod with Fir-Tree blank design and extended functionality (Ultimate) for long distance casts. We have increased the diameter of the first guide ring and put it forward as much as possible; we have also equipped other pieces with single leg guides and reduced the number of rings on quiver tips: all this made it possible to use carp reels with high capacity spools and the least risk of overlaps. The rod differs advantageously from competitors as you will be able to reach maximum acceleration and cast distances with it easily. In the set, there are four quiver tips of 2, 3, 4 and 6 ounces, all with guide rings of size 5. Moreover, you can buy a reinforced quiver tip in order to reach even longer distances, it will add a 10% range to your cast. The insert on the grip and the reel seat bushing are made of Kevlar: this is a highlight of the design of our feeder rod, which emphasizes that this model relates to Chameleon series.",
+    characteristicsTitle: "General properties:",
+    characteristicsGap: true,
+    characteristics: [
+      "The rod grip is made of cork produced in Portugal;",
+      "Fir-Tree blank design (WIPO patented);",
+      "Blank material by Toray Japan 55-66 msi (40Т+46Т);",
+      "The Orient Rods butt cup with branded engraving on titanium surface;",
+      "The guide rings of K-series (sizes: 30,20,16,12,12,10,10);",
+      "The reel seat Fuji DPSD17CC with Kevlar bushing;",
+      "The rod is supplied in a dense case made of oxford 900 fabric;",
+      "Net weight of the rod blank is 173 grams;",
+      "The weight of the rod is 310 grams;",
+      "Casting distance using 80 grams flat feeder and mono line 0,26 is -160+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series 30–10mm"], ["Weight", "310g"], ["Blank weight", "173g"], ["Casting distance", "160m+ with 80g flat feeder"], ["Handle", "Portuguese cork and Kevlar details"]]
   },
   {
@@ -202,11 +491,41 @@ window.ORIENT_PRODUCTS = [
     series: "chameleon",
     name: "Chameleon S1, S2",
     variant: "13' 3.5lb / 13' 3–5oz",
-    price: "£350.00",
-    models: [{ label: "Chameleon S1 13' 3.5lb", code: "CHS1", price: "£350.00" }, { label: "Chameleon S2 13' 3–5oz", code: "CHS2", price: "£350.00" }],
+    price: "From £350.00",
+    models: [{ label: "Chameleon S1 13' 3.5lb", price: "£350.00" }, { label: "Chameleon S2 13' 3–5oz", price: "£360.00" }],
+    imageCount: 10,
+    imageVersion: "chameleon-s1-s2-20261012-1",
+    imageExtensions: { 2: "png", 3: "png", 4: "png", 5: "png", 6: "png", 7: "png", 8: "png", 9: "png", 10: "png" },
+    imageAlts: [
+      "Chameleon S1 and S2 reel seat with the model names",
+      "Chameleon S1 and S2 reel seat and carbon blank close-up",
+      "Chameleon S1 and S2 Kevlar-carbon handle and engraved butt cap",
+      "Chameleon S1 and S2 handle-length diagram marked 65.5 cm",
+      "Chameleon S1 and S2 two-piece rod and tip section",
+      "Chameleon S1 and S2 reel seat and engraved blank",
+      "Chameleon S1 and S2 engraved carbon reel-seat detail",
+      "Chameleon S1 and S2 titanium butt cap and section joint",
+      "Chameleon S1 and S2 butt and tip sections with the first guide",
+      "Chameleon S1 and S2 K-series guide arrangement"
+    ],
     action: "Rear Action",
     summary: "The S1 and S2 Chameleon rods: two Rear Action options for responsive, self-loading casting.",
-    description: "These rods are not just modern followers or prototypes of the popular Chameleon 13 3.5 lb rod. They are “pumped” versions with new modifications of the legendary rod. Chameleon S1 13 3.5 lb and Chameleon S2 13 3-5 oz got automotive interpretation Stage 1 and Stage 2 by combining the weaving of carbon fiber at different angles on the blank.\n\nThis modification allowed us to achieve the effect when we can say that “the blank is casting itself”. This effect is the real turbocharging of the blank. It can be considered as a device that accumulates potential energy and completely releases it when casting! Nothing but the magic of casting!",
+    // Original manufacturer's wording and model prices, checked 12 October 2026.
+    description: "We are proud to introduce our latest rods in 2022:\n\nChameleon 13' 3.5 lb (S1) and Chameleon 13' 3-5 oz (S2)\n\nThese rods are not just modern followers or prototypes of the popular Chameleon 13 3.5 lb rod. They are \"pumped\" versions with new modifications of the legendary rod. Chameleon S1 13 3.5 lb and Chameleon S2 13 3-5 oz got automotive interpretation Stage 1 and Stage 2 by combining the weaving of carbon fiber at different angles on the blank. This modification allowed us to achieve the effect when we can say that \"the blank is casting itself\".\n\nThis effect is the real turbocharging of the blank. It can be considered as a device that accumulates potential energy and completely releases it when casting! Nothing but the magic of casting!",
+    characteristicsTitle: "General properties:",
+    characteristicsGap: true,
+    characteristics: [
+      "Fir-Tree blank design (WIPO patented);",
+      "\"REAR ACTION\" rod design according to Orient Rods classifier;",
+      "blank material by Toray Japan 55-66 msi (40Т+46Т);",
+      "Slit Carbon Toray reinforcing finish carbon coating has been applied in order to add rigidity and strength;",
+      "K-series guide rings;",
+      "the reel seat Orient - Fuji with branded Chameleon engraving on the carbon bushing;",
+      "grip finishing with Kevlar - Carbon;",
+      "the weight: S1-375 grams, S2-363 grams;",
+      "casting distance is 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Models", "S1: 13' 3.5lb; S2: 13' 3–5oz"], ["Blank", "Toray Japan 40T + 46T"], ["Guides", "K-series"], ["Casting distance", "200m+"], ["Action", "Rear Action"], ["Handle", "Kevlar-carbon"]]
   },
   {
@@ -217,10 +536,39 @@ window.ORIENT_PRODUCTS = [
     name: "Inventa",
     variant: "13' 3.7lb",
     price: "£420.00",
-    code: "INV1337",
+    models: [{ label: "Inventa 13' 3.7lb", code: "INV1337", price: "£420.00" }],
+    imageCount: 10,
+    imageVersion: "inventa-20261012-1",
+    imageExtensions: { 1: "png", 2: "png", 3: "png", 4: "png", 5: "png", 6: "png", 7: "png", 8: "png", 9: "png", 10: "png" },
+    imageAlts: [
+      "Inventa reel seat and carbon blank with the model name",
+      "Inventa reel seat and engraved carbon sleeve close-up",
+      "Inventa red-carbon handle and tip section",
+      "Inventa combined handle, EVA cone and titanium butt cap",
+      "Inventa ALPS guides on the butt and tip sections",
+      "Inventa two-piece rod with reel seat and first guide",
+      "Inventa reel seat and tip-section guide detail",
+      "Inventa complete butt and tip sections with Orient Rods label",
+      "Inventa rod sections beside the red protective sleeve",
+      "Inventa rod sections inside the red protective sleeve"
+    ],
     action: "Full Drive",
     summary: "An innovative distance rod designed to remain comfortable across a wide range of anglers.",
-    description: "The Inventa fishing rod introduces a new series of fishing rods that incorporate various innovative technical solutions and inventions, both visually and technologically invisible, but will distinguish these rods from all others in terms of characteristics and design. The main goal of this series is maximum distance and comfort in fishing, and we have made efforts to minimize the dependence between the stiffness of the blank and the casting distance, making this rod suitable for a wide range of physically different fishermen.\n\nThe main feature of the manufacturing process lies in the selection and preparation of the carbon fiber bundle for further winding together with prepreg. The resulting product is a monolithic item that possesses higher deformation and strength parameters, stable properties, and optimal structure. It maintains distance steadily in any weather conditions with weights in the range of 120-128 grams.",
+    // Complete manufacturer's wording and model price, checked 12 October 2026.
+    description: "The Inventa fishing rod introduces a new series of fishing rods that incorporate various innovative technical solutions and inventions, both visually and technologically invisible, but will distinguish these rods from all others in terms of characteristics and design. The main goal of this series is maximum distance and comfort in fishing, and we have made efforts to minimize the dependence between the stiffness of the blank and the casting distance, making this rod suitable for a wide range of physically different fishermen.\n\nTo achieve this, we have achieved maximum synchronicity in casting and landing.\n\nThe main feature of the manufacturing process lies in the selection and preparation of the carbon fiber bundle for further winding together with prepreg. The resulting product is a monolithic item that possesses higher deformation and strength parameters, stable properties, and optimal structure, and of course, the weight of the fishing rod.\n\nThe fishing rod features its own engraving on the carbon sleeve of the reel holder in the form of a smeared letter \"I.\"\n\nA novelty in the design of the fishing rod is an original combined handle with a small EVA cone and a red carbon coating that will provide aesthetic pleasure for a long time and give the entire product a glamorous look.\n\nIt maintains distance steadily in any weather conditions with weights in the range of 120-128 grams.\n\nThis fishing rod will allow you to increase the distance of your casting by +10-15 meters!",
+    characteristicsTitle: "General characteristics:",
+    characteristicsGap: true,
+    characteristics: [
+      "Fir-tree blank construction (WIPO patent);",
+      "\"FULL DRIVE/Orient Rods\" rod action - Orient Rods classifier;",
+      "Toray Japan blank material 55-66 msi (40T+46T);",
+      "An additional strengthening carbon coating 1.5K Twill is applied for extra stiffness and strength;",
+      "ALPS (S6-GSHRZG) guides;",
+      "Orient-Fuji reel holder with a carbon sleeve;",
+      "Orient Rods titanium cap with a branded engraving;",
+      "Weight of the fishing rod is 375 grams; Casting range is 200+ meters."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Blank", "Toray Japan 40T + 46T"], ["Guides", "ALPS S6-GSHRZG"], ["Weight", "375g"], ["Casting distance", "200m+"], ["Action", "Full Drive"], ["Butt cap", "Titanium Orient Rods cap"]]
   },
   {
@@ -273,10 +621,42 @@ window.ORIENT_PRODUCTS = [
     name: "Galax SD",
     variant: "13' 4.0lb",
     price: "£250.00",
+    models: [{ label: "Galax SD 13' 4.0lb", price: "£250.00" }],
+    imageCount: 11,
+    imageVersion: "galax-sd-20261012-1",
+    imageExtensions: { 1: "png", 2: "png", 3: "png", 4: "png", 5: "png", 6: "png", 7: "png", 8: "png", 9: "png", 10: "png", 11: "png" },
+    imageAlts: [
+      "Galax SD rod sections, reel seat, handle and guides",
+      "Galax SD engraved butt cap close-up",
+      "Galax SD reel seat and guide on the rod sections",
+      "Galax SD handle and section joint",
+      "Galax SD reel seat and guide arrangement",
+      "Galax SD handle and tip section",
+      "Galax SD Fuji reel seat and first guide",
+      "Galax SD reel seat and section joint",
+      "Galax SD guide arrangement on the butt and tip sections",
+      "Galax SD first guides and rod-section joints",
+      "Galax SD reel seat and tip-section guide"
+    ],
     action: "Top Drive",
     summary: "The stronger Galax option for distance-focused carp fishing.",
-    description: "Galax SD extends the Top Drive principle into a higher-test 13-foot model. The more powerful tip and responsive lower section are designed to create fast acceleration, controlled recovery and dependable distance under a heavier load.",
-    specs: [["Length", "13'"], ["Test curve", "4.0lb"], ["Action", "Top Drive"], ["Blank", "Toray Japan carbon"], ["Guides", "K-series"], ["Use", "Distance carp fishing"]]
+    // Full current manufacturer wording and USD price, checked 12 October 2026.
+    description: "SD = Super Distance — a series designed for maximum casting distance, high power reserves, and stable performance at long range.\n\nThe Galax SD 13' 4.0 lb is an affordable rod developed for both beginner competition anglers and experienced fishermen already participating in tournaments.\n\nThanks to its substantial power reserve, the series can also be used as a spod rod for intensive baiting. The Top Drive concept ensures efficient blank loading through a powerful tip section, allowing the angler to generate high rig speed and achieve confident performance at extreme casting distances.\n\nThe blank is manufactured using the patented Fir-Tree construction technology from high-modulus Japanese Toray 30T + 40T carbon fiber, providing an optimal balance of strength, stiffness, and low weight.",
+    characteristicsTitle: "Key Specifications",
+    characteristicsGap: true,
+    characteristics: [
+      "Length: 13 ft (3.90 m)",
+      "Test Curve: 4.0 lb",
+      "Blank Material: Toray 30T + 40T",
+      "Construction: Fir-Tree",
+      "Reel Seat: FUJI",
+      "Butt Ring: 50 mm",
+      "Guides: PacBay Minima",
+      "Weight: 418 g",
+      "Application: Long-range casting, heavy rigs, and PVA bags."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
+    specs: [["Length", "13 ft (3.90 m)"], ["Test curve", "4.0lb"], ["Action", "Top Drive"], ["Blank", "Toray Japan 30T + 40T"], ["Guides", "PacBay Minima, 50mm butt ring"], ["Weight", "418g"], ["Use", "Long-range casting, heavy rigs and PVA bags"]]
   },
   {
     slug: "chameleon-s2-13-35oz",
@@ -298,85 +678,200 @@ window.ORIENT_PRODUCTS = [
     series: "distance",
     name: "Distance",
     variant: "13' 4.0lb",
-    price: "£389.61",
+    price: "£450.00",
+    models: [{ label: "Distance 13' 4.0lb", code: "DST1340", price: "£450.00" }],
     action: "Universal distance rod",
+    hideAction: true,
     imageCount: 8,
-    imageExtensions: {8: "png"},
-    officialTitle: "Distance 13' 4.0 lb",
-    officialCode: "DST1340",
-    officialPrice: "£389.61",
+    imageVersion: "distance-20261012-1",
+    imageExtensions: { 1: "png", 2: "png", 3: "png", 4: "png", 5: "png", 6: "png", 7: "png", 8: "png" },
+    imageAlts: [
+      "Distance carbon reel seat and blank with the model name",
+      "Distance ALPS forged carbon reel seat close-up",
+      "Distance reel seat and tip section with an ALPS guide",
+      "Distance butt and tip sections with the first guide",
+      "Distance rod sections with the Orient Rods label",
+      "Distance ALPS guides on the butt and tip sections",
+      "Distance carbon handle, EVA cone and titanium butt cap",
+      "Distance complete butt and tip sections"
+    ],
     hideDescriptionTitle: true,
     summary: "A 4.0lb rod for maximum-distance casting, large PVA bags and spod duties.",
-    description: "Distance is a name that should remove questions about the purpose of this rod and its use in various situations. The rod's 4.0 lb test allows it to be effectively used as a spod rod with a permissible weight of up to 160 grams, and it is also ideal for use with large PVA bags.\n\nThe light weight of the rod and the “all-wheel drive” design with instant engagement of the butt will allow you to save energy and maintain maximum distances for more time. The tip of the rod is designed for effective use even with light loads, all this allows it to be classified as a Universal rod.\n\nGeneral characteristics:\n• Titanium rod plug\n• ALPS forged carbon reel seat\n• ALPS rings\n• Rod weight — 385 grams",
+    // Full English manufacturer description and USD numeric price, checked 12 October 2026.
+    description: "Distance is a name that should remove questions about the purpose of this rod and its use in various situations. The rod's 4.0 lb test allows it to be effectively used as a spod rod with a permissible weight of up to 160 grams, and it is also ideal for use with large PVA bags.\n\nThe light weight of the rod and the “all-wheel drive” design with instant engagement of the butt will allow you to save energy and maintain maximum distances for more time. The tip of the rod is designed for effective use even with light loads, all this allows it to be classified as a Universal rod.",
+    characteristicsGap: true,
+    characteristics: [
+      "Titanium rod plug",
+      "ALPS forged carbon reel seat",
+      "ALPS rings",
+      "Rod weight -385 grams"
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Test curve", "4.0lb"], ["Permissible spod weight", "Up to 160g"], ["Weight", "385g"], ["Action", "All-wheel-drive"], ["Guides", "ALPS"], ["Reel seat", "ALPS forged carbon"]]
   },
+
   {
-    slug: "chameleon-distance-feeder-14-35oz",
-    category: "rods",
-    group: "feeder",
-    series: "chameleon-feeder",
-    name: "Chameleon Distance Feeder",
-    variant: "14' 3–5oz",
-    price: "£420.00",
-    code: "CDF1435",
-    action: "Distance feeder",
-    summary: "A dedicated long-distance feeder model in the Chameleon range.",
-    description: "Chameleon Distance Feeder is the long-range successor to the established Chameleon feeder platform. The Distance series combines practical, minimalist design with the power and efficiency required for demanding freshwater feeder fishing.\n\nAt 14 feet (4.20m), the rod uses a slim, rigid blank, titanium guides and advanced materials while keeping its weight to 335g. Its 3–5oz casting range provides the power needed for large carp and the extreme distances for which it was designed.",
-    specs: [["Length", "14' / 4.20m"], ["Casting range", "3–5oz"], ["Blank", "Toray Japan 40T + 46T"], ["Guides", "Titanium K-series, 30–10mm"], ["Tips", "12oz and 14oz"], ["Reel seat", "Fuji DPSD 17CC"], ["Weight", "335g"], ["Case", "Oxford 900"]]
+    "slug": "chameleon-fx-feeder-135-35lb",
+    "category": "rods",
+    "group": "feeder",
+    "series": "chameleon-fx",
+    "name": "Chameleon FX Feeder",
+    "variant": "13.5' 3.5lb — 2026 model",
+    "price": "£410.00",
+    "action": "FX feeder",
+    "summary": "The latest 13.5-foot, 3.5lb model in the Chameleon Feeder range.",
+    "description": "Feeder Chameleon 13.5' 3.5 lb FX series\n\nWe tried to make this feeder rod as close as possible in structure and length to carp rods, so that fishermen do not have to readjust and feel uncomfortable when casting.\n\nThe design follows the principle of a whip, which, due to the rigid short butt section, stabilizes the softer parts of the feeder well in various casting positions. This also allows us to achieve a better balance of rigidity and convenience in casting and control during landing fish. In the future, with such a design, we will be able to produce 4-component feeder rods of different construction and rigidity. Casting with this feeder is as comfortable as possible and you will be able to improve the range of your cast and get more pleasure from your favorite hobby.",
+    "code": "CDF1435",
+    "hideAction": true,
+    "officialTitle": "Chameleon FX Feeder 13.5' 3.5lb (model 2026)",
+    "models": [
+      {
+        "label": "Chameleon FX Feeder 13.5' 3.5lb (model 2026)",
+        "code": "CDF1435",
+        "price": "£410.00"
+      }
+    ],
+    "imageCount": 8,
+    "imageExtensions": {
+      "1": "png",
+      "2": "png",
+      "3": "png",
+      "4": "png",
+      "5": "png",
+      "6": "png",
+      "7": "png",
+      "8": "png"
+    },
+    "imageVersion": "fx-20261012-2",
+    "imageAlts": [
+      "Chameleon FX complete rod sections, handle and coloured quivertips",
+      "Chameleon FX guide and engraved titanium butt cap on the cork handle",
+      "Chameleon FX guides, blank and reel seat above the cork handle",
+      "Chameleon FX feeder sections, cork handle and quivertips in the rod case",
+      "Chameleon FX model name on the rod case alongside the cork handle and tips",
+      "Chameleon FX rod sections and four coloured quivertips",
+      "Chameleon FX 8, 10, 12 and 14 ounce carbon quivertips",
+      "Chameleon FX quivertip ratings and protective tube"
+    ],
+    "characteristicsTitle": "General characteristics:",
+    "characteristicsGap": true,
+    "characteristics": [
+      "the handle of the rod is made of cork (Cork) made in Portugal;",
+      "the blank design is fir-tree (WIPO patent);",
+      "blank material Toray Japan 55-66 msi (40T+46T);",
+      "butt cap Orient Rods material titanium with branded engraving;",
+      "guides K-series, 7 guides sizes - 40,30,25,16,14,12,12;",
+      "a set of quivertips: 3 pieces - 10 (fluoro orange), 12 (fluoro white), 14 (fluoro yellow) ounces with 3 guides with a diameter of 8 mm. Additionally, the set includes an 8 ounce quivertip (fluoro red) with 4 guides with an internal diameter of 4.97 mm;",
+      "Fuji DPSD17CC reel seat with a sleeve and insert covered with Kevlar;",
+      "the rod is supplied in a thick case made of 900 oxford material;",
+      "the weight of the FX feeder is 341 grams;",
+      "the casting range of the flat/feeder is 200+ meters."
+    ],
+    "orderEmail": "uk.orientrods@gmail.com"
+  },
+
+  {
+    "slug": "amphitrite-154-47m-120-250",
+    "category": "rods",
+    "group": "seafishing",
+    "series": "amphitrite",
+    "name": "Amphitrite",
+    "variant": "15'4'' / 4.7m — 120–250g",
+    "price": "Price on request",
+    "action": "Seafishing rod",
+    "summary": "A dedicated sea-fishing rod in the current Orient range.",
+    "description": "Amphitrite 15'4'' / 4.7 m 120-250",
+    "hideAction": true,
+    "officialTitle": "Amphitrite 15'4'' / 4.7 m 120-250",
+    "models": [
+      {
+        "label": "Amphitrite 15'4'' / 4.7 m 120-250",
+        "price": "Price on request"
+      }
+    ],
+    "imageCount": 10,
+    "imageExtensions": {
+      "1": "png",
+      "2": "png",
+      "3": "png",
+      "4": "png",
+      "5": "png",
+      "6": "png",
+      "7": "png",
+      "8": "png",
+      "9": "png",
+      "10": "png"
+    },
+    "imageVersion": "amphitrite-20261012-2",
+    "imageAlts": [
+      "Amphitrite Orient branding and model lettering on the blue-accented blank",
+      "Amphitrite titanium butt cap, carbon blank emblem and shaped grip",
+      "Amphitrite butt and white-tipped rod sections",
+      "Amphitrite complete rod sections, handle and white tip",
+      "Amphitrite blue-accented reel seat",
+      "Amphitrite rod guides and model lettering",
+      "Amphitrite blue-accented section joints",
+      "Amphitrite guide, carbon blank and sea emblem",
+      "Amphitrite shaped butt grip and guide",
+      "Amphitrite blue and silver section joint"
+    ],
+    "orderEmail": "uk.orientrods@gmail.com"
   },
   {
-    slug: "chameleon-fx-feeder-135-35lb",
-    category: "rods",
-    group: "feeder",
-    series: "chameleon-feeder",
-    name: "Chameleon FX Feeder",
-    variant: "13.5' 3.5lb — 2026 model",
-    price: "£410.00",
-    code: "CDF1435LBS",
-    action: "FX feeder",
-    summary: "The latest 13.5-foot, 3.5lb model in the Chameleon Feeder range.",
-    description: "Chameleon FX Feeder was designed to feel as close as possible in length and construction to a classic carp rod, allowing anglers to retain a familiar casting technique when moving between carp and feeder fishing.\n\nIts blank follows a whip principle: a short, rigid lower section stabilises the more flexible upper sections through different casting angles. This balance of stiffness and flexibility improves control, creates smooth and powerful casts, and supports accurate fishing at long range.",
-    specs: [["Length", "13.5'"], ["Test curve", "3.5lb"], ["Model", "2026"], ["Blank", "Patented Fir-Tree construction"], ["Material", "Toray Japan 40T + 46T"], ["Handle", "High-quality Portuguese natural cork"]]
-  },
-  {
-    slug: "chameleon-distance-d2-14-36oz",
-    category: "rods",
-    group: "feeder",
-    series: "chameleon-distance",
-    name: "Chameleon Distance D2",
-    variant: "14' 3–6oz",
-    price: "Call for price",
-    action: "Distance feeder",
-    summary: "The higher-rated 14-foot Chameleon Distance feeder model.",
-    description: "Chameleon Distance D2 is the higher-rated 14-foot, 3–6oz model in the Chameleon Distance feeder range. It is designed for anglers who need a dedicated distance-feeder format with extra capacity for demanding casts and heavier feeder work.",
-    specs: [["Length", "14'"], ["Casting range", "3–6oz"], ["Series", "Chameleon Distance"], ["Use", "Long-distance feeder fishing"]]
-  },
-  {
-    slug: "amphitrite-154-47m-120-250",
-    category: "rods",
-    group: "seafishing",
-    series: "amphitrite",
-    name: "Amphitrite",
-    variant: "15'4'' / 4.7m — 120–250g",
-    price: "Call for price",
-    action: "Seafishing rod",
-    summary: "A dedicated sea-fishing rod in the current Orient range.",
-    description: "Amphitrite is Orient Rods’ 15'4'' (4.7m), 120–250g sea-fishing model. Its long blank and stated casting range place it in the dedicated sea-fishing section of the range, for anglers who need controlled casting with substantial terminal tackle.",
-    specs: [["Length", "15'4'' / 4.7m"], ["Casting range", "120–250g"], ["Category", "Seafishing rods"]]
-  },
-  {
-    slug: "bestia-casting-13-47oz",
-    category: "rods",
-    group: "casting",
-    series: "bestia-casting",
-    name: "Bestia Casting",
-    variant: "13' 4–7oz",
-    price: "£650.00",
-    code: "BSTC1347N, BSTC1347D",
-    action: "Casting / sea fishing",
-    summary: "A separate casting direction in the Orient Rods range, designed for maximum-load casts.",
-    description: "Bestia Casting marks Orient Rods’ dedicated casting direction. Using more than ten years of experience, new materials and computer modelling, the blank redistributes maximum loads through its sections for a more efficient release of energy under heavy casting loads. The design can increase blank elasticity by up to 30% with only a modest weight increase, allowing the specification to be matched more closely to an athlete’s physical requirements.",
-    specs: [["Length", "13'"], ["Casting range", "4–7oz"], ["Guides", "ALPS / Pacific Bay Minima / Fuji"], ["Reel seat", "Fuji"], ["Butt cap", "Titanium"], ["Code", "BSTC1347N, BSTC1347D"]]
+    "slug": "bestia-casting-13-47oz",
+    "category": "rods",
+    "group": "casting",
+    "series": "bestia-casting",
+    "name": "Bestia Casting",
+    "variant": "13' 4–7oz",
+    "price": "£650.00",
+    "action": "Casting / sea fishing",
+    "summary": "A separate casting direction in the Orient Rods range, designed for maximum-load casts.",
+    "description": "Our company starts producing casting rods, this is a separate direction in the line of our models.\n\nBased on more than ten years of experience, new materials and computer modeling, we have completely changed the concept in the approach to designing casting rods, strength changes were made to the rod blank to redistribute maximum loads to different parts of the rod and this changed the structure of the rod and allowed for more efficient release of energy under maximum loads in casts. We have developed a system for increasing the elasticity of any blank up to 30% with a slight increase in the weight of the blank and this will enable athletes to improve their results. Such an algorithm for redistributing load and elasticity will allow us to offer the manufacture of an individual rod for each athlete, taking into account his physical capabilities.",
+    "hideAction": true,
+    "officialTitle": "BESTIA CASTING 13` 4-7OZ",
+    "models": [
+      {
+        "label": "Bestia Casting 13' 4–7oz (N)",
+        "code": "BSTC1347N",
+        "price": "£650.00"
+      },
+      {
+        "label": "Bestia Casting 13' 4–7oz (D)",
+        "code": "BSTC1347D",
+        "price": "£600.00"
+      }
+    ],
+    "imageCount": 8,
+    "imageExtensions": {
+      "1": "png",
+      "2": "png",
+      "3": "png",
+      "4": "png",
+      "5": "png",
+      "6": "png",
+      "7": "png",
+      "8": "png"
+    },
+    "imageVersion": "casting-20261012-1",
+    "imageAlts": [
+      "Bestia Casting rod sections, guides, reel seat and model name",
+      "Bestia Casting complete rod sections with model designation",
+      "Bestia Casting reel seat and branded carbon blank",
+      "Bestia Casting model lettering and 13 foot 4–7oz rating",
+      "Bestia Casting rod sections and guide layout",
+      "Bestia Casting section joint and titanium butt cap",
+      "Bestia Casting complete section and reel seat details",
+      "Bestia Casting equipment N and equipment D reel seat comparison"
+    ],
+    "characteristicsTitle": "The Casting series rods are equipped with:",
+    "characteristicsGap": true,
+    "characteristics": [
+      "guides ALPS / Pacific Bay Minima / Fuji",
+      "reel seats Fuji",
+      "Butt cap material Titanium"
+    ],
+    "orderEmail": "uk.orientrods@gmail.com"
   },
   {
     slug: "bestia-vc",
@@ -385,11 +880,67 @@ window.ORIENT_PRODUCTS = [
     series: "bestia",
     name: "Bestia Series",
     variant: "Varnish coating (VC)",
-    price: "Price on request",
-    models: [{ label: "Bestia 12' 3.5lb", code: "BST1235", price: "£250.00" }, { label: "Bestia 13' 3.5lb", code: "BST1335C", price: "£270.00" }, { label: "Bestia Ultimate 13' 3–5oz", code: "BSTU1335", price: "£280.00" }, { label: "Bestia Ultimate 13' 4–6oz", code: "BSTU1346", price: "£300.00" }],
+    price: "From £320.00",
+    // Manufacturer's current numeric amounts shown with £, following the
+    // owner's existing Astra price-display rule (no exchange-rate conversion).
+    models: [
+      { label: "Bestia 12' 3.5lb", code: "BST1235", price: "£325.00" },
+      { label: "Bestia 13' 3.5lb", code: "BST1335C", price: "£350.00" },
+      { label: "Bestia Ultimate 13' 3–5oz", code: "BSTU1335", price: "£320.00" },
+      { label: "Bestia Ultimate 13' 4–6oz", code: "BSTU1346", price: "£380.00" }
+    ],
     action: "Full Drive",
+    imageCount: 17,
+    imageVersion: "bestia-vc-20261011-1",
+    imageAlts: [
+      "Bestia varnish-coated rods with carbon reel seats",
+      "Bestia Ultimate 13' 3-5Oz rod sections",
+      "Bestia first guide and carbon blank",
+      "Bestia handle and carbon blank detail",
+      "Bestia rod handle and butt section",
+      "Bestia varnish-coated blank detail",
+      "Bestia tip section and guides",
+      "Bestia butt cap close-up",
+      "Bestia tip guide close-up",
+      "Bestia first guide close-up",
+      "Bestia Ultimate carbon reel seat detail",
+      "Bestia protective sleeve and Orient Rods label",
+      "Bestia 12' 3.5lb rod sections in the protective sleeve",
+      "Bestia 13' 3.5lb rod sections in the protective sleeve",
+      "Bestia rod sections and guides in the protective sleeve",
+      "Bestia promotional image with a rod and reel",
+      "Bestia Ultimate 13' 4-6Oz rod sections"
+    ],
     summary: "The varnish-coated Bestia finish, built around the balanced Full Drive casting action.",
-    description: "FULL DRIVE CONCEPT - provides the most uniform power distribution throughout the rod’s blank. The blank is made using the most high-modulus Japanese Toray carbon fiber materials available on the market today 55-66msi (40T + 46T). Rods are light, rigid and have a real test curve.\n\nBESTIA is a really universal rod - its blank will work as fast action when casting, and as a medium-fast action when landing a fish. The rods allow you to do long distance and very accurate casts with minimal efforts and playing with a fish of any size will be a real pleasure! The ULTIMATE series of rods are powerful and sensitive - can be used as spod and marker rods too!",
+    // Original manufacturer's wording and block order, verified 11 October 2026.
+    description: "",
+    descriptionTable: {
+      headings: ["MODEL", "WEIGHT (g)", "CASTING DISTANCE (m)", "CASTING WEIGHT RANGE (g)"],
+      rows: [
+        ["BESTIA 12' 3,5lb", "330", "200", "up to 130"],
+        ["BESTIA 13' 3,5lb", "350", "200", "up to 130"],
+        ["BESTIA ULTIMATE 13' 3-5Oz", "380", "200+", "up to 150"],
+        ["BESTIA ULTIMATE 13' 4-6Oz", "430", "200+", "up to 200"]
+      ]
+    },
+    characteristicsGap: true,
+    characteristics: [
+      "FULL DRIVE CONCEPT - provides the most uniform power distribution throughout the rod’s blank;",
+      "Unique patented blank design (WIPO Global Design Database DM/090 372) fir-tree;",
+      "The blank is made using the most high - modulus Japanese Toray carbon fiber materials available on the market today 55-66msi (40T+46T);",
+      "Rods are light, rigid and have a real test curve;",
+      "To protect the blank and to add some extra strength and rigidity, we applied a special carbon fiber Twill finish 3K, which also serves as a reinforcing layer;",
+      "As a final protection layer the rod is covered with a special highest quality two-component epoxy varnish 2K, which not only protects the blank from any aggressive weather impacts, but also adding a nice 3 dimensional appearances to the entire rod!",
+      "We use only the finest quality components for our rods such genuine 18mm FUJI DPS reel seat and the latest full Stainless Steel, impact resistant S-KL type 50mm guides with SIC inserts! The advantage of using such the guides is that we can use the latest generations of extremely thin braided and monofilament lines. Also they reduce a possibility of formation of any knots and an overlapping effect.",
+      "The rods are fitted with both standard Fuji DPS 18mm reel seats and Orient carbon reel seats with original Fuji components;",
+      "Bestia is a real universal rod - its blank will work as fast action when casting, and as a medium - fast action when landing a fish! The Ultimate series of rods are powerful and sensitive - can be used as Spod and Marker rods too!",
+      "The rods allow you to do long distance and very accurate casts with minimal efforts, and playing with a fish of any size will be a real pleasure!",
+      "ULTIMATE series can be used as spod and marker rods too!"
+    ],
+    additionalCharacteristics: [
+      "Bestia 12' 3,5LB will occupy a worthy place in the entire line of the Full Drive rods. It will differ from its older sister not only with a shorter length and a smaller weight. It will also have a slightly stronger Top Section (in comparison with Bestia 13‘ 3.5LB rod). This will give the opportunity to increase acceleration when casting the rod, easily and without failures work with weights in its test range and as a result neutralize the length reduction."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Series", "Bestia"], ["Coating", "Varnish coating (VC)"], ["Action", "Full Drive"], ["Blank", "Toray Japan 40T + 46T"], ["Guides", "50mm S-KL SIC / 5G K-series"], ["Use", "Carp, distance and specialist work"]]
   },
   {
@@ -399,11 +950,40 @@ window.ORIENT_PRODUCTS = [
     series: "bestia",
     name: "Bestia Series",
     variant: "Film coated (PP)",
-    price: "Price on request",
-    models: [{ label: "Bestia 12' 3.5lb", price: "£250.00" }, { label: "Bestia 13' 3.5lb", price: "£270.00" }, { label: "Bestia Ultimate 13' 3–5oz", price: "£280.00" }, { label: "Bestia Ultimate 13' 4–6oz", price: "£300.00" }],
+    price: "From £320.00",
+    models: [
+      { label: "Bestia 13' 3.5lb (PP)", price: "£360.00" },
+      { label: "Bestia 13' 3–5oz (PP)", price: "£320.00" }
+    ],
+    imageCount: 10,
+    imageVersion: "bestia-pp-20261012-1",
+    imageExtensions: { 1: "png", 2: "png", 3: "png", 4: "png", 5: "png", 6: "png", 7: "png", 8: "png", 9: "png", 10: "png" },
+    imageAlts: [
+      "Bestia PP carbon reel seat close-up",
+      "Bestia PP handle and engraved titanium butt cap",
+      "Bestia PP complete butt and tip sections",
+      "Bestia PP reel seat and tip section with a guide",
+      "Bestia PP reel-seat locking rings and engraved blank",
+      "Bestia PP Ultimate model marking on the blank",
+      "Bestia PP handle-length diagram marked 65.4 cm",
+      "Bestia PP handle, titanium butt cap and section joint",
+      "Bestia PP guide arrangement on the rod sections",
+      "Bestia PP section joint and tip-section guides"
+    ],
     action: "Full Drive",
     summary: "The film-coated Bestia finish, with the same balanced Full Drive character.",
-    description: "FULL DRIVE CONCEPT - provides the most uniform power distribution throughout the rod’s blank. The blank is made using the most high-modulus Japanese Toray carbon fiber materials available on the market today 55-66msi (40T + 46T). Rods are light, rigid and have a real test curve.\n\nBESTIA is a really universal rod - its blank will work as fast action when casting, and as a medium-fast action when landing a fish. The rods allow you to do long distance and very accurate casts with minimal efforts and playing with a fish of any size will be a real pleasure! The ULTIMATE series of rods are powerful and sensitive - can be used as spod and marker rods too!",
+    // Full PP-specific manufacturer wording and both USD prices, checked 12 October 2026.
+    description: "The modification of the rod Bestia 13' 3-5oz (PP) is special because the blank of the rod is completely covered with a polypropylene film (PP) wrapped at a certain angle. All other characteristics are identical to the Bestia (VC) series with varnish coating.\n\nThis rod series is specially made for use in intensive sport mode and in aggressive environments like salt water. This rod has received a number of features that have made it as much functional as possible.",
+    characteristicsTitle: "Additional features of the PP film coating:",
+    characteristicsGap: true,
+    characteristics: [
+      "greater impact resistance",
+      "the rod is highly protected from aggressive environments due to the low moisture absorption",
+      "film wrapped at a certain angle makes the blank strong and rigid",
+      "better wear resistance of the coating",
+      "although the coating can be considered as an electrical insulation material, one should not use the rods during a thunderstorm."
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Series", "Bestia"], ["Coating", "Film coated (PP)"], ["Action", "Full Drive"], ["Blank", "Toray Japan 40T + 46T"], ["Guides", "50mm S-KL SIC / 5G K-series"], ["Use", "Carp, distance and specialist work"]]
   },
   {
@@ -411,11 +991,52 @@ window.ORIENT_PRODUCTS = [
     category: "sticks",
     name: "Bombus",
     variant: "Carbon Throwing Stick",
-    price: "Call for price",
-    models: [{ label: "Bombus 23mm", code: "BMBS23", price: "Call for price" }, { label: "Bombus 27mm", code: "BMBS27", price: "Call for price" }, { label: "Bombus 32mm", code: "BMBS32", price: "Call for price" }, { label: "Bombus 34mm", code: "BMBS34", price: "Call for price" }],
+    price: "Price on request",
+    models: [
+      { label: "Bombus 23mm — 1000 / 1100 / 1200 / 1300mm", code: "BMBS23", price: "Price on request" },
+      { label: "Bombus 27mm — 1000 / 1100 / 1200 / 1300mm", code: "BMBS27", price: "Price on request" },
+      { label: "Bombus 32mm — 1000 / 1100 / 1200 / 1300mm", code: "BMBS32", price: "Price on request" },
+      { label: "Bombus 34mm — 1000 / 1100 / 1200 / 1300mm", code: "BMBS34", price: "Price on request" }
+    ],
+    imageCount: 9,
+    imageVersion: "bombus-20261012-1",
+    imageAlts: [
+      "Bombus throwing sticks with the model name",
+      "Bombus curved carbon throwing-stick openings",
+      "Bombus engraved carbon tube close-up",
+      "Bombus black grip close-up",
+      "Bombus red grip close-up",
+      "Bombus red and black grip options",
+      "Bombus complete curved throwing stick with red grip",
+      "Bombus neoprene case and Orient Rods label",
+      "Bombus neoprene case fastening detail"
+    ],
     action: "Long-range baiting",
     summary: "A carbon throwing stick with a vacuum-moulded form for powerful, controlled boilie delivery.",
-    description: "Bombus is made using a thermo-compressive vacuum-moulding process. Carbon fibres are arranged to create a controlled boilie rotation and maximum casting distance. A neoprene case is included.",
+    // Exact source wording and full model table, checked 12 October 2026; no numeric prices are published.
+    description: "Manufactured in three sizes:",
+    descriptionTable: {
+      headings: ["MODEL", "DIA (мм)", "LENGTH (мм)", "INTENDED FOR BOILIES DIA (мм)"],
+      rows: [
+        ["BMBS23", "23", "1000 - 1300", "18 - 20"],
+        ["BMBS27", "27", "1000 - 1300", "20 - 24"],
+        ["BMBS32", "32", "1000 - 1300", "26 - 30"],
+        ["BMBS34", "34", "1000 - 1300", "26 - 32"]
+      ]
+    },
+    characteristicsGap: true,
+    characteristics: [
+      "Weight: 108 - 125 grams;",
+      "Products can be equipped with an Unique Orient Rods design rear valve. Applying it, we get an enlarged opening at the end of the carbon tube, which allows us to increase the speed of the boilie by increasing the air pressure during casting.",
+      "Two patents of Ukraine are received for this design;",
+      "Our Throwing Sticks are made by a special thermo-compressive method using vacuum molding, in which the compression of the mold is carried out by means of heated elements of equipment. This method allows you to make products of a very complex shape;",
+      "For our Throwing Sticks manufacturing, we use the carbon fiber material located at a certain angle and filling the entire volume of material with threads, as well as Plain Weave Spread Tow. This type of weaving provides the best durability of the composite material;",
+      "The carbon fiber location at a certain angle also allowed to achieve the maximum torsion of the boil and as a result to achieve the longest distances casts.",
+      "The optimal Throwing Stick's bending shape were chosen after a huge amount of tests, allowing now to do the world longest casts of more than 130 meter.",
+      "High Quality Neoprene Case Included.",
+      "CAUTION! Please avoid exposing the unit to direct sunlight!"
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Diameters", "23mm, 27mm, 32mm, 34mm"], ["Intended boilies", "18–32mm, depending on diameter"], ["Weight", "108–125g for 27mm"], ["Length", "1000–1300mm"], ["Distance", "130m+"], ["Case", "High-quality neoprene included"]]
   },
   {
@@ -423,11 +1044,42 @@ window.ORIENT_PRODUCTS = [
     category: "sticks",
     name: "AnacondaS",
     variant: "Carbon Throwing Stick",
-    price: "Call for price",
-    code: "AN26",
+    price: "Price on request",
+    models: [{ label: "AnacondaS 26mm — 1000 / 1100 / 1200 / 1300mm", code: "AN26", price: "Price on request" }],
+    imageCount: 9,
+    imageVersion: "anacondas-20261012-1",
+    imageAlts: [
+      "AnacondaS throwing sticks with the model name",
+      "AnacondaS reverse-bend carbon throwing-stick openings",
+      "AnacondaS engraved carbon tube close-up",
+      "AnacondaS black grip close-up",
+      "AnacondaS red grip close-up",
+      "AnacondaS red and black grip options",
+      "AnacondaS complete reverse-bend throwing stick with red grip",
+      "AnacondaS neoprene case and Orient Rods label",
+      "AnacondaS neoprene case fastening detail"
+    ],
     action: "Long-range baiting",
     summary: "A patented reverse-bend throwing stick for accurate long-range baiting with soft boilies.",
-    description: "AnacondaS uses a patented reverse-bend shape designed not to twist the boilie during casting. The vacuum-moulded carbon construction is optimised for accuracy and long distance, even with softer baits.",
+    // Complete manufacturer's thirteen-item description; checked 12 October 2026.
+    description: "",
+    characteristicsGap: true,
+    characteristics: [
+      "Diameter 26mm;",
+      "Weight: 89 - 110 grams;",
+      "Length 1000 - 1300mm;",
+      "The patented shape with a reverse bend \"does not twist\" Boilie when casting, which allows to use even the soft boilies;",
+      "High accuracy castings at distances of up to 140 meters;",
+      "Products can be equipped with an Unique Orient Rods design rear valve. Applying it, we get an enlarged opening at the end of the carbon tube, which allows us to increase the speed of the boilie by increasing the air pressure during casting.",
+      "Two patents of Ukraine are received for this design N101730 and N101733;",
+      "Our Throwing Sticks are made by a special thermo-compressive method using vacuum molding, in which the compression of the mold is carried out by means of heated elements of equipment. This method allows you to make products of a very complex shape;",
+      "For our Throwing Sticks manufacturing, we use the carbon fiber material located at a certain angle and filling the entire volume of material with threads, as well as Plain Weave Spread Tow. This type of weaving provides the best durability of the composite material;",
+      "The carbon fiber location at a certain angle also allowed to achieve the maximum torsion of the boil and as a result to achieve the longest distances casts.",
+      "The optimal Throwing Stick's bending shape were chosen after a huge amount of tests, allowing now to do the world longest casts!",
+      "High Quality Neoprene Case Included.",
+      "CAUTION! Please avoid exposing the unit to direct sunlight!"
+    ],
+    orderEmail: "uk.orientrods@gmail.com",
     specs: [["Diameter", "26mm"], ["Weight", "89–110g"], ["Length", "1000–1300mm"], ["Distance", "Up to 140m"], ["Patents", "Ukraine N101730 and N101733"], ["Case", "High-quality neoprene included"]]
   }
 ];
