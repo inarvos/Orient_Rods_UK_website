@@ -2,7 +2,7 @@
 window.ORIENT_SITE = {
   name: "Orient Rods UK",
   domain: "orientrodsuk.com",
-  email: "",
+  email: "uk.orientrods@gmail.com",
   phone: "",
   socialUrl: "",
   footerNote: "Purpose-built carp rods and throwing sticks."

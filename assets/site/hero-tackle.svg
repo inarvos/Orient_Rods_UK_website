@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="960" viewBox="0 0 640 960" fill="none">
+  <title>Carp rod sections and a curved carbon throwing stick</title>
+  <defs>
+    <linearGradient id="blank" x1="228" x2="253" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0d0d"/><stop offset=".18" stop-color="#52595b"/><stop offset=".44" stop-color="#252a2c"/>
+      <stop offset=".7" stop-color="#767c7e"/><stop offset=".9" stop-color="#202526"/><stop offset="1" stop-color="#080a0b"/>
+    </linearGradient>
+    <linearGradient id="tip" x1="101" x2="108" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#080b0c"/><stop offset=".38" stop-color="#899092"/><stop offset=".7" stop-color="#333a3b"/><stop offset="1" stop-color="#0d1111"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" x2="1">
+      <stop stop-color="#242a2c"/><stop offset=".17" stop-color="#c9ced0"/><stop offset=".35" stop-color="#798185"/>
+      <stop offset=".54" stop-color="#f2f4f3"/><stop offset=".7" stop-color="#929b9e"/><stop offset="1" stop-color="#333a3c"/>
+    </linearGradient>
+    <linearGradient id="seat" x1="0" x2="1">
+      <stop stop-color="#080b0c"/><stop offset=".22" stop-color="#30393b"/><stop offset=".52" stop-color="#606a6b"/>
+      <stop offset=".75" stop-color="#1a2325"/><stop offset="1" stop-color="#05090a"/>
+    </linearGradient>
+    <linearGradient id="stick" x1="350" y1="800" x2="570" y2="890" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#090d0e"/><stop offset=".28" stop-color="#626a6d"/><stop offset=".55" stop-color="#24292b"/>
+      <stop offset=".78" stop-color="#596265"/><stop offset="1" stop-color="#0b0f10"/>
+    </linearGradient>
+    <pattern id="carbon" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+      <path d="M0 0H2V2H0zM2 2H4V4H2z" fill="#c5cbd0" fill-opacity=".07"/>
+      <path d="M2 0H4V2H2zM0 2H2V4H0z" fill="#020606" fill-opacity=".18"/>
+      <path d="M0 .5H2M2 2.5H4" stroke="#b7c0c1" stroke-opacity=".06" stroke-width=".5"/>
+    </pattern>
+    <pattern id="grip" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(28)">
+      <path d="M0 0H12V12H0z" fill="#111719"/>
+      <path d="M0 6L6 0L12 6L6 12Z" stroke="#626c6e" stroke-opacity=".7" stroke-width="1.5"/>
+      <path d="M2 6L6 2L10 6L6 10Z" fill="#2b3335"/>
+    </pattern>
+  </defs>
+
+  <!-- Fine tip section with raised, silver-edged guide rings. -->
+  <g transform="rotate(8 105 920)">
+    <path d="M103-40H106L109 1020H99Z" fill="url(#tip)"/>
+    <path d="M105-40L105 1020" stroke="#c5ced0" stroke-opacity=".4" stroke-width=".8"/>
+    <g stroke-linecap="round" stroke-linejoin="round">
+      <path d="M105 127L119 114L136 103M105 139L123 119" stroke="#8e989b" stroke-width="2.1"/>
+      <ellipse cx="132" cy="101" rx="15" ry="5" transform="rotate(-30 132 101)" fill="#0d1514" stroke="#c2ccce" stroke-width="2"/>
+      <path d="M106 330L127 308L147 298M106 345L131 315" stroke="#8e989b" stroke-width="2.6"/>
+      <ellipse cx="143" cy="294" rx="22" ry="6.5" transform="rotate(-29 143 294)" fill="#101918" stroke="#c2ccce" stroke-width="2.3"/>
+      <path d="M106 552L132 525L161 513M106 571L139 534" stroke="#8e989b" stroke-width="3"/>
+      <ellipse cx="155" cy="509" rx="28" ry="8" transform="rotate(-28 155 509)" fill="#101918" stroke="#c2ccce" stroke-width="2.6"/>
+      <path d="M106 797L140 763L173 746M106 820L148 775" stroke="#8e989b" stroke-width="3.3"/>
+      <ellipse cx="166" cy="742" rx="35" ry="10" transform="rotate(-27 166 742)" fill="#101918" stroke="#d1d7d7" stroke-width="2.8"/>
+    </g>
+    <g fill="#1a2021" stroke="#667275" stroke-width=".5">
+      <path d="M102 125H108V145H102Z"/><path d="M101 326H109V350H101Z"/>
+      <path d="M100 548H110V579H100Z"/><path d="M99 791H111V829H99Z"/>
+    </g>
+  </g>
+
+  <!-- Butt section: tapered carbon blank, reel-seat collars and textured grip. -->
+  <g transform="rotate(8 240 920)">
+    <path d="M237-105H249L250 621H230Z" fill="url(#blank)"/>
+    <path d="M237-105H249L250 621H230Z" fill="url(#carbon)"/>
+    <path d="M247-100L247 621" stroke="#c4cbcd" stroke-opacity=".38" stroke-width="1.2"/>
+    <path d="M231 470H250V474H231Z" fill="#9f3a33" fill-opacity=".8"/>
+    <path d="M231 466H250V468H231Z" fill="#adb4b3" fill-opacity=".4"/>
+    <ellipse cx="243" cy="-103" rx="7" ry="2.3" fill="#909799"/>
+    <path d="M232 602H248V660H232Z" fill="url(#seat)"/>
+    <rect x="228" y="618" width="25" height="16" rx="3" fill="url(#seat)"/>
+    <rect x="227" y="633" width="27" height="9" rx="1.5" fill="url(#metal)"/>
+    <rect x="229" y="642" width="23" height="158" rx="5" fill="url(#seat)"/>
+    <path d="M233 653H239V782H233Z" fill="#111719"/>
+    <path d="M244 651V790" stroke="#c3ccce" stroke-opacity=".3" stroke-width="1.4"/>
+    <rect x="227" y="665" width="27" height="9" rx="1.5" fill="url(#metal)"/>
+    <path d="M232 675H238V752H232Z" fill="#090d10" stroke="#747e80" stroke-width=".8"/>
+    <path d="M229 756H252V786H229Z" fill="url(#seat)"/>
+    <path d="M229 761H252M229 766H252M229 771H252M229 776H252M229 781H252" stroke="#98a3a4" stroke-opacity=".33"/>
+    <rect x="226" y="786" width="29" height="15" rx="2.5" fill="url(#metal)"/>
+    <rect x="228" y="802" width="25" height="29" rx="2" fill="url(#seat)"/>
+    <rect x="227" y="831" width="27" height="8" rx="1.5" fill="url(#metal)"/>
+    <path d="M230 839H251L254 1023H226Z" fill="url(#blank)"/>
+    <path d="M230 839H251L254 1023H226Z" fill="url(#carbon)"/>
+    <path d="M249 844L251 1020" stroke="#c4cbcd" stroke-opacity=".28"/>
+    <rect x="225" y="1023" width="30" height="12" rx="3" fill="url(#metal)"/>
+  </g>
+
+  <!-- Carbon throwing stick with a visible curved tube mouth and diamond grip. -->
+  <path d="M365 1008L521 667C568 573 585 528 564 474L544 423" stroke="#080d0e" stroke-width="28" stroke-linecap="round"/>
+  <path d="M365 1008L521 667C568 573 585 528 564 474L544 423" stroke="url(#stick)" stroke-width="24" stroke-linecap="round"/>
+  <path d="M365 1008L521 667C568 573 585 528 564 474L544 423" stroke="url(#carbon)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M371 1008L527 668C574 574 591 529 570 475L550 424" stroke="#b4c0c2" stroke-opacity=".48" stroke-width="1.6" stroke-linecap="round"/>
+  <path d="M365 1008L418 892" stroke="#101618" stroke-width="32" stroke-linecap="round"/>
+  <path d="M367 1004L417 894" stroke="url(#grip)" stroke-width="29" stroke-linecap="round"/>
+  <ellipse cx="418" cy="892" rx="15" ry="4" transform="rotate(26 418 892)" fill="#313b3d" stroke="#9ea9ab" stroke-width="1.5"/>
+  <ellipse cx="544" cy="423" rx="13" ry="5" transform="rotate(-23 544 423)" fill="#334044" stroke="#586668" stroke-width="1.5"/>
+  <ellipse cx="544" cy="423" rx="9.4" ry="3.1" transform="rotate(-23 544 423)" fill="#080f10"/>
+
+  <!-- Quiet echoes of the original guide-ring motif. -->
+  <circle cx="409" cy="357" r="26" stroke="#c99b5e" stroke-opacity=".38"/>
+  <circle cx="355" cy="541" r="40" stroke="#c99b5e" stroke-opacity=".32"/>
+</svg>
