@@ -1,65 +1,48 @@
-# Orient Rods UK website
+# Orient Rods UK
 
-A static website designed for Hostinger Single Web Hosting. It uses only HTML, CSS and JavaScript, so no server setup, database or framework is required.
+The UK catalogue for Orient carp, feeder, sea fishing and casting rods, plus carbon throwing sticks. Product pages show photos, specifications and model prices. Customers can enquire by email.
 
-## What is included
+**Website:** [orientrodsuk.com](https://orientrodsuk.com/)
 
-- Responsive home, Rods, Throwing Sticks, product and Contact pages
-- Screenshot-matched Rods navigation: Carp, Feeder, Seafishing and Casting sections
-- Desktop and mobile navigation with all product sub-menus
-- One product data file for descriptions, specifications and prices
-- Product galleries populated with selected product photography from the supplied archive
-- Basic SEO files: `robots.txt`, `sitemap.xml` and a favicon
-- Clean Hostinger URLs, including `/rods`, `/v2`, `/bestia-casting` and `/contact`
+**Browse:** [Rods](https://orientrodsuk.com/rods) | [Throwing sticks](https://orientrodsuk.com/throwing-sticks) | [Contact](https://orientrodsuk.com/contact)
 
-## Update a price or description
+The site runs on Hostinger and uses plain HTML, CSS and JavaScript. There is no build step or database. The `.htaccess` file maps clean URLs such as `/rods` and `/galax` to the shared page templates.
 
-Open `data/products.js`. Every product is one clearly labelled block. For pages with several options, change each price in the product's `models` array; `price` is the catalogue price. Edit `description` for the text below the gallery. An optional `characteristics` array displays a spaced list with red-square markers beneath that text. After an update, increase the `products.js?v=` number in all four HTML files so visitors load the new data.
+## Project structure
 
-## Add product photographs
+| Path | Purpose |
+| --- | --- |
+| [`index.html`](index.html), [`catalogue.html`](catalogue.html), [`product.html`](product.html), [`contact.html`](contact.html) | Homepage and page templates |
+| [`app.js`](app.js), [`styles.css`](styles.css) | Navigation, page rendering, photo galleries and styling |
+| [`data/products.js`](data/products.js), [`data/site.js`](data/site.js) | Product catalogue and site settings |
+| [`assets/products/`](assets/products/), [`assets/site/`](assets/site/) | Product photos, branding and homepage artwork |
+| [`.htaccess`](.htaccess), [`sitemap.xml`](sitemap.xml), [`robots.txt`](robots.txt) | URL routing, redirects and search indexing |
 
-For each product, make a folder inside `assets/products/` using that product's `slug` in `data/products.js`.
+## Preview locally
 
-Example for IVA 13' 3.5lb:
+From the repository root, run this command with Python 3 installed:
 
-```text
-assets/products/iva-13-35lb/
-  1.jpg
-  2.jpg
-  3.jpg
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-`1.jpg` appears on the product listing and as the first product-page image. `2.jpg` and `3.jpg` appear in the gallery. The supplied archive has already been matched to 16 product galleries. Chameleon S1 / S2 and Inventa do not have identifiable photo sets in that archive, so they intentionally use the neutral fallback until their images are added.
+Open `http://127.0.0.1:8000/` for the homepage. This server does not apply `.htaccess` rules, so use these direct URLs to preview the other templates:
 
-For larger galleries, set `imageCount` to the total number of sequentially named images. For a format other than JPG, specify that image's extension using `imageExtensions`, for example `{ 2: "webp", 3: "jpeg" }`. When replacing an existing photograph, change the product's `imageVersion` value too; this prevents an old cached image from appearing. Optional `imageAlts` entries describe the images in the same order for accessibility.
+- Rods: `http://127.0.0.1:8000/catalogue.html?route=rods`
+- Throwing sticks: `http://127.0.0.1:8000/catalogue.html?route=throwing-sticks`
+- Galax product page: `http://127.0.0.1:8000/product.html?route=galax`
+- Contact: `http://127.0.0.1:8000/contact.html`
 
-The completed Astra gallery has nineteen full-resolution JPG images in numerical filename order, from `2021Astra1.jpg` through `2021Astra19.jpg`. Bestia VC has seventeen full-resolution JPG images, from `2021Bestia1.jpg` through `2021Bestia17.jpg`. See `ASTRA_UPDATE.md` and `BESTIA_VC_UPDATE.md` for the gallery and content details.
+## Maintain the catalogue
 
-VekTra, V-2 and V-3 now have seven, ten and eight original JPG images respectively, also in numerical filename order. Their complete English descriptions and characteristics match the manufacturer's main website. See `VEKTRA_VENUS_UPDATE.md` for details.
+- **Prices and descriptions:** Edit the relevant entry in [`data/products.js`](data/products.js). `price` is used on product cards. `models` contains the labels, codes and prices shown in **Available models**. If a record has no `models` array, the product page uses `officialPrice` when set, otherwise `price`. Use `description`, `characteristics` and `descriptionTable` for product copy, bullet points and specifications.
+- **Photos:** Use sequential filenames inside `assets/products/<slug>/`, or the folder named in `imageSlug` when set. Image 1 is the cover; numbers set the gallery order. Set `imageCount` to the total and use `imageExtensions` for files that are not `.jpg`. For example, Galax uses `1.jpg` as its cover and `2.png` through `9.png` for the remaining photos. Keep `imageAlts` in gallery order and change `imageVersion` when replacing or reordering photos.
+- **Contact email:** Update `email` in [`data/site.js`](data/site.js) and the fallback link, displayed address and page description in [`contact.html`](contact.html). Update any product `orderEmail` values separately if the order address changes.
 
-`descriptionTable` adds an accessible model-specification table. `characteristicsGap: true` leaves a bigger gap before the red-square characteristics section. `characteristicsTitle` adds an optional heading directly above its list. `additionalCharacteristics` supports a separate follow-on list. `orderEmail` adds the order-contact sentence at the bottom, also with a bigger gap above it. These options are used on the completed Astra, Bestia VC, VekTra, V-2 and V-3 pages.
+After changing a shared script, stylesheet or data file, increase its `?v=` value in the HTML pages that load it so visitors get the latest version.
 
-## Add contact details
+## Deploy to Hostinger
 
-Open `data/site.js` and fill in any of these fields:
-
-```js
-email: "your-email@example.com",
-phone: "+44 ...",
-socialUrl: "https://..."
-```
-
-Only filled-in contact methods appear on the Contact page.
-
-## Upload to Hostinger
-
-1. In Hostinger, open **Websites** → **Manage** → **File Manager**.
-2. Open `public_html`.
-3. Remove the default Hostinger page files only after keeping a copy if you want one.
-4. Upload the **contents** of this folder into `public_html`, including the hidden `.htaccess` file. Do not upload the enclosing `orient-rods-uk` folder itself.
-5. Visit `/rods`, `/v2`, `/bestia-casting` and `/contact` to confirm that clean links work.
-6. Test the menu, Rods, Throwing Sticks and a product page on a phone.
-
-## Put it on GitHub
-
-Create an empty GitHub repository, upload this whole project folder, and commit it. The website will still be hosted by Hostinger; GitHub is your safe editable copy.
+1. In Hostinger's File Manager, back up the current site before replacing files in `public_html`.
+2. Upload the four HTML pages, `app.js`, `styles.css`, `data/`, `assets/`, `favicon.ico`, `robots.txt`, `sitemap.xml` and the hidden `.htaccess` file directly into `public_html`. Keep the folder structure. Git files and Markdown documentation do not need to be uploaded.
+3. Check `/rods`, `/throwing-sticks`, `/galax` and `/contact` on the live site. On a phone, open the menu and swipe through a product gallery. Confirm that the Contact link opens an email draft to the correct address.
